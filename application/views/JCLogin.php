@@ -35,7 +35,7 @@
                                     var catpcha = $("#g-recaptcha-response").val();
                                     var user = $("#username").val();
                                     var pass = $('#password').val();
-                                    alert(user+" "+pass);
+                                    alert(user + " " + pass);
                                     return false;
                                 });
                             });
@@ -45,5 +45,6 @@
             </form>
         </div>
     </div>
+</div>
 </div>
 <!---------------------------------------------------------------------------------------------------------------------------------------->

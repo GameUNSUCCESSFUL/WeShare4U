@@ -4,7 +4,7 @@
     <title>WeShare4U</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap -->
+    <!-- Bootstrap-->
     <link rel="stylesheet" href="<?php echo base_url('public/css/bootstrap.css') ?>">
     <!-- My Style -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/style/myStyle.css') ?>">
@@ -17,7 +17,7 @@
 <!-- NavBar Login---------------------------------------------------------------------------------------------------------------------------------------------->
 
 <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+    <div class="container-fluid navbarheight">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
@@ -26,22 +26,22 @@
             </button>
             <a class="navbar-brand" href="#">WeShare4U</a>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="collapse navbar-collapse " id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="menubar">Home</a></li>
+                <li><a href="#" style="color: #fdf9ff;">About</a></li>
+                <li><a href="#" style="color: #fdf9ff;">Projects</a></li>
+                <li><a href="#" style="color: #fdf9ff;">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <button type="button" name="but-login" class="btn btn-primary" data-toggle="modal"
+                    <button type="button" name="but-login" class="btn btn-info" data-toggle="modal"
                             data-target=".bs-example-modal-lg">Login
                     </button>
                 </li>
                 <?php include "JCLogin.php";?>
                 <li>
-                    <button type="button" name="but-login" class="btn btn-default" data-toggle="modal"
+                    <button type="button" name="but-login" class="btn btn-default" data-toggle="modal2"
                             data-target=".bs-example-modal-lg">register
                     </button>
                 </li>
@@ -49,6 +49,7 @@
         </div>
     </div>
 </nav>
+
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
