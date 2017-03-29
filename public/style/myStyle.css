@@ -1,0 +1,30 @@
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #01579B;
+    margin: 30px 0px;
+
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+    background-color: #01579B;
+    padding: 25px;
+    position: static;
+    bottom: 0px;
+    width: 100%;
+    color: #fdf9ff;
+}
+
+.carousel-inner img {
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+    min-height:200px;
+}
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none;
+    }
+}
