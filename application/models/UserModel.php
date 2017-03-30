@@ -1,21 +1,23 @@
 <?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 /**
  * Created by PhpStorm.
  * User: Game
  * Date: 30-Mar-17
  * Time: 01:12
  */
-
-class UserModel extends CI_Model {
+class UserModel extends CI_Model
+{
     /**
      * __construct function.
      *
      * @access public
      * @return void
      */
-    public function __construct() {
+    public function __construct()
+    {
 
         parent::__construct();
     }
@@ -29,16 +31,25 @@ class UserModel extends CI_Model {
      * @param mixed $password
      * @return bool true on success, false on failure
      */
-    public function create_user($username, $email, $password) {
+    public function create_user($email, $password, $firstname, $lastname, $identity_card, $district, $province, $zip_code, $address, $phone)
+    {
 
         $data = array(
-            'username'   => $username,
-            'email'      => $email,
-            'password'   => $this->hash_password($password),
-            'created_at' => date('Y-m-j H:i:s'),
+            'email' => $email,
+            'password' => $this->hash_password($password),
+            'firstname' => $firstname,
+            'lastname' => $lastname,
+            'identity_card' => $identity_card,
+            'district' => $district,
+            'province' => $province,
+            'zip_code' => $zip_code,
+            'address' => $address,
+            'phone' => $phone,
+
+
         );
 
-        return $this->db->insert('users', $data);
+        return $this->db->insert('tb_donation_users', $data);
 
     }
 
@@ -50,7 +61,8 @@ class UserModel extends CI_Model {
      * @param mixed $password
      * @return bool true on success, false on failure
      */
-    public function resolve_user_login($username, $password) {
+    public function resolve_user_login($username, $password)
+    {
 
         $this->db->select('password');
         $this->db->from('users');
@@ -68,7 +80,8 @@ class UserModel extends CI_Model {
      * @param mixed $username
      * @return int the user id
      */
-    public function get_user_id_from_username($username) {
+    public function get_user_id_from_username($username)
+    {
 
         $this->db->select('id');
         $this->db->from('users');
@@ -84,7 +97,8 @@ class UserModel extends CI_Model {
      * @param mixed $user_id
      * @return object the user object
      */
-    public function get_user($user_id) {
+    public function get_user($user_id)
+    {
 
         $this->db->from('users');
         $this->db->where('id', $user_id);
@@ -99,7 +113,8 @@ class UserModel extends CI_Model {
      * @param mixed $password
      * @return string|bool could be a string on success, or bool false on failure
      */
-    private function hash_password($password) {
+    private function hash_password($password)
+    {
 
         return password_hash($password, PASSWORD_BCRYPT);
 
@@ -113,7 +128,8 @@ class UserModel extends CI_Model {
      * @param mixed $hash
      * @return bool
      */
-    private function verify_password_hash($password, $hash) {
+    private function verify_password_hash($password, $hash)
+    {
 
         return password_verify($password, $hash);
 

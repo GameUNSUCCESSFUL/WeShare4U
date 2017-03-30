@@ -25,10 +25,12 @@ class ReceiverController extends CI_Controller
 
         //echo $this->pagination->create_links();
         $sql = "SELECT * FROM tb_donation_products";
-        $rs = $this->db->query($sql);
+        $dbcon = $this->db->query($sql);
 
-        $data['rs'] = $rs->result_array();
+        $data['dbcon'] = $dbcon->result_array();
 
+        $this->load->view('header');
         $this->load->view("receiverView",$data);
+        $this->load->view('footer');
     }
 }
