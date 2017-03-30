@@ -61,16 +61,15 @@ class UserModel extends CI_Model
      * @param mixed $password
      * @return bool true on success, false on failure
      */
-    public function resolve_user_login($username, $password)
+    public function resolve_user_login($email, $password)
     {
 
         $this->db->select('password');
-        $this->db->from('users');
-        $this->db->where('username', $username);
+        $this->db->from('tb_donation_users');
+        $this->db->where('email', $email);
         $hash = $this->db->get()->row('password');
 
         return $this->verify_password_hash($password, $hash);
-
     }
 
     /**

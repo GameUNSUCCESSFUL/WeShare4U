@@ -49,9 +49,7 @@ class UserController extends CI_Controller
         if ($this->form_validation->run() === false) {
 
             // validation not ok, send validation errors to the view
-            $this->load->view('header');
             $this->load->view('user/register/register', $data);
-            $this->load->view('footer');
 
         } else {
 
@@ -70,9 +68,7 @@ class UserController extends CI_Controller
             if ($this->UserModel->create_user($email, $password, $firstname, $lastname, $identity_card, $district, $province, $zip_code, $address, $phone)) {
 
                 // user creation ok
-                $this->load->view('header');
                 $this->load->view('user/register/register_success', $data);
-                $this->load->view('footer');
 
             } else {
 
@@ -80,9 +76,7 @@ class UserController extends CI_Controller
                 $data->error = 'There was a problem creating your new account. Please try again.';
 
                 // send error to the view
-                $this->load->view('header');
                 $this->load->view('user/register/register', $data);
-                $this->load->view('footer');
 
             }
 
@@ -98,32 +92,21 @@ class UserController extends CI_Controller
      */
     public function login()
     {
-
         // create the data object
         $data = new stdClass();
 
-        // load form helper and validation library
-        $this->load->helper('form');
-        $this->load->library('form_validation');
-
         // set validation rules
-        $this->form_validation->set_rules('username', 'Username', 'required|alpha_numeric');
-        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email|min_length[5]');
+        $this->form_validation->set_rules('password', 'Password', 'required|min_length[5]');
 
         if ($this->form_validation->run() == false) {
-
-            // validation not ok, send validation errors to the view
-            $this->load->view('header');
-            $this->load->view('user/login/login');
-            $this->load->view('footer');
-
+            echo "error";
         } else {
-
             // set variables from the form
-            $username = $this->input->post('username');
+            $email = $this->input->post('email');
             $password = $this->input->post('password');
 
-            if ($this->user_model->resolve_user_login($username, $password)) {
+            if ($this->user_model->resolve_user_login($email, $password)) {
 
                 $user_id = $this->user_model->get_user_id_from_username($username);
                 $user = $this->user_model->get_user($user_id);

@@ -19,7 +19,7 @@
 
 <!-- JCLogin -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
-<?php include "JCLogin.php"; ?>
+<?php include "user/login/JCLogin.php"; ?>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
