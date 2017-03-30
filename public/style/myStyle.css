@@ -1,28 +1,14 @@
-.navbar {
-    margin-bottom: 0;
-    border-radius: 0;
-    background-image:-webkit-linear-gradient( #01579b,#0173cb );
-    background-image: -moz-linear-gradient( #01579b,#0173cb );
-    background-image: -ms-linear-gradient( #01579b,#0173cb );
-    background-image: -o-linear-gradient( #01579b,#0173cb );
-    background-image: linear-gradient( #01579b,#0173cb );
+.nav{
+    padding: 20px 5px 20px;
 }
-.navbarheight{
-    padding: 50px 50px 10px;
+.center{
+    margin: 100px;
+    padding: 100px;
+    background-color: rgba(26, 26, 26,0.2); /* #1a1a1a */
 }
-.menubar:link{
-    color: #fdf9ff;
-}
-.menubar:hover{
-     color: #1a1a1a;
-}
-.menubar:visited{
-    color: #fdf9ff;
-}
-
 /* Add a gray background color and some padding to the footer */
 footer {
-    background-color: #01579B;
+    background-color: #438eb9;
     padding: 25px;
     position: static;
     bottom: 0px;

@@ -5,6 +5,10 @@ class Welcome extends CI_Controller
 {
     public function index()
     {
-        $this->load->view('test');
+        $this->load->view('home');
+    }
+    public function select()
+    {
+        $this->load->view('userselect');
     }
 }
