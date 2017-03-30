@@ -20,10 +20,7 @@
                                    name="password">
                         </div>
                         <a href=#>Forget Password ? </a>|<br><br>
-                        <div align="center" class="g-recaptcha" id="g-recaptcha-response"
-                             data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI">
-                            <!-- <div align="center" class="g-recaptcha" id="g-recaptcha-response" data-sitekey="6LcDrxkUAAAAAFU0amUfGRTLXZVvYy1Hc3rOHYvY"> -->
-                        </div>
+                        <div align="center" class="g-recaptcha" data-sitekey="6LdM9RoUAAAAABEquyphv8VNH7W3l0aG92CKTYKc"></div>
                         <div align="center"><p style="color:red"><br><span id="resultPassword"></span></p></div>
                         <div align="center">
                             <button type="submit" id="bt" class="btn btn-primary">เข้าสู่ระบบ</button>

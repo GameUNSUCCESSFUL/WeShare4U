@@ -1,48 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta charset="utf-8" />
-    <title>Dashboard - Ace Admin</title>
-
-    <meta name="description" content="overview &amp; stats" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-
-    <!-- bootstrap & fontawesome -->
-    <link rel="stylesheet" href="<?php echo base_url('public/css/bootstrap.css') ?>" />
-    <link rel="stylesheet" href="<?php echo base_url('public/css/font-awesome.css') ?>" />
-
-    <!-- page specific plugin styles -->
-
-    <!-- text fonts -->
-    <link rel="stylesheet" href="<?php echo base_url('public/css/ace-fonts.css') ?>" />
-
-    <!-- ace styles -->
-    <link rel="stylesheet" href="<?php echo base_url('public/css/ace.css') ?>" class="ace-main-stylesheet" id="main-ace-style" />
-
-    <!--[if lte IE 9]-->
-    <link rel="stylesheet" href="<?php echo base_url('public/css/ace-part2.css') ?>" class="ace-main-stylesheet" />
-    <![endif]-->
-
-    <!--[if lte IE 9]-->
-    <link rel="stylesheet" href="<?php echo base_url('public/css/ace-ie.css') ?>" />
-    <![endif]-->
-
-    <!-- inline styles related to this page -->
-
-    <!-- ace settings handler -->
-    <script src="<?php echo base_url('public/js/ace-extra.js') ?>"></script>
-
-    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
-
-    <!--[if lte IE 8]-->
-    <script src="<?php echo base_url('public/js/html5shiv.js') ?>"></script>
-    <script src="<?php echo base_url('public/js/respond.js') ?>"></script>
-    <![endif]-->
-</head>
-
-<body class="no-skin">
-<!-- #section:basics/navbar.layout -->
 <div id="navbar" class="navbar navbar-default">
     <script type="text/javascript">
         try{ace.settings.check('navbar' , 'fixed')}catch(e){}
@@ -66,15 +21,10 @@
             <a href="#" class="navbar-brand">
                 <small>
                     <i class="fa fa-leaf"></i>
-                    KU TOY
+                        <div>KU TOY</div>
                 </small>
             </a>
 
-            <!-- /section:basics/navbar.layout.brand -->
-
-            <!-- #section:basics/navbar.toggle -->
-
-            <!-- /section:basics/navbar.toggle -->
         </div>
 
         <!-- #section:basics/navbar.dropdown -->
@@ -338,7 +288,7 @@
                 <!-- #section:basics/navbar.user_menu -->
                 <li class="light-blue">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                        <img class="nav-user-photo" src="http://[::1]/SoftEnProject/public/avatars/user.jpg" alt="Jason's Photo" />
+
                         <span class="user-info">
 									<small>Welcome,</small>
 									Jason
@@ -380,21 +330,3 @@
         <!-- /section:basics/navbar.dropdown -->
     </div><!-- /.navbar-container -->
 </div>
-
-
-
-
-<!-- the following scripts are used in demo only for onpage help and you don't need them -->
-<link rel="stylesheet" href="<?php echo base_url('public/css/ace.onpage-help.css')?>" />
-<link rel="stylesheet" href="<?php echo base_url('public/js/themes/sunburst.css')?>" />
-
-<script type="text/javascript"> ace.vars['base'] = '..'; </script>
-<script src="<?php echo base_url('public/js/ace/elements.onpage-help.js')?>"></script>
-<script src="<?php echo base_url('public/js/ace/ace.onpage-help.js')?>"></script>
-<script src="<?php echo base_url('public/js/rainbow.js')?>"></script>
-<script src="<?php echo base_url('public/js/language/generic.js')?>"></script>
-<script src="<?php echo base_url('public/js/language/html.js')?>"></script>
-<script src="<?php echo base_url('public/js/language/css.js')?>"></script>
-<script src="<?php echo base_url('public/js/language/javascript.js')?>"></script>
-</body>
-</html>
