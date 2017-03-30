@@ -12,4 +12,5 @@ class ReceiverModel extends CI_Model
     {
         parent::__construct();
     }
+
 }
