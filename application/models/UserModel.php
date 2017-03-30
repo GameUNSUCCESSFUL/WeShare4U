@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Time: 01:12
  */
 
-class User_model extends CI_Model {
+class UserModel extends CI_Model {
     /**
      * __construct function.
      *

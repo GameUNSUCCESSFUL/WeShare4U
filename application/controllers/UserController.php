@@ -6,14 +6,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Date: 30-Mar-17
  * Time: 00:26
  */
-class User extends CI_Controller
+class UserController extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->library(array('session'));
-        $this->load->helper(array('url'));
-        $this->load->model('user_model');
     }
 
 
