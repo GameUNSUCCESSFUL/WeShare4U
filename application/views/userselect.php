@@ -8,7 +8,7 @@
     <?php include "includecss.php" ?>
 
 </head>
-<body style="background-image: <?php base_url('public/images/img_h1.jpg') ?>;">
+<body class="bg">
 <!-- nav -->
 <?php include "navbar.php"?>
 <div class="center">

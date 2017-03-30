@@ -6,6 +6,9 @@
     padding: 100px;
     background-color: rgba(26, 26, 26,0.2); /* #1a1a1a */
 }
+.bg{
+    background-image: url("../images/img_h1.jpg");
+}
 /* Add a gray background color and some padding to the footer */
 footer {
     background-color: #438eb9;
