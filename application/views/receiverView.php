@@ -2,9 +2,14 @@
 <head>
     <meta charset="utf-8">
     <title>Item Grid</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <?php include "includecss.php" ?>
 
 </head>
 <body>
+<?php include "navbar.php"?>
 <h1 align="center">Show Data</h1>
 
 <div class="container">
@@ -17,8 +22,10 @@
                         <div class="thumbnail">
                             <!--<img src="img/img1.jpg" alt="" class="img-responsive">-->
                             <div class="caption">
-                                <h1> <?php echo $r['product_name'] ?> </h1>
+                                <h1 align="center"> <?php echo $r['product_name'] ?> </h1>
+                                <div align="right">
                                 <a class="btn" href="#">see more</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -28,20 +35,6 @@
 
     </div>
 </div>
-
-<?php
-//    if(count($rs)==0){
-//        echo "<tr><td colspan='4' align='center'>--no data--</td></tr>>";
-//    }
-//    else{
-//        $no=1;
-//        foreach ($rs as $r){
-//            echo "<tr>";
-//            echo "<td align='center'>$no</td>";
-//            echo "<td>" . $r['product_name'] . "</td>";
-//            echo "</tr>";
-//            $no++;
-//        }
-//    }
-//?>
+<?php echo $this->pagination->create_links(); ?>
+<?php include "footer.php"?>
 </body>

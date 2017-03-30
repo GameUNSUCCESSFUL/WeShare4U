@@ -15,22 +15,17 @@ class ReceiverController extends CI_Controller
 
     public function index()
     {
-       // $this->load->library('pagination');
+        $config['base_url'] = base_url()."index.php/ReceiverController/";
+        $config['per_page'] = 8;
+        $config['total_rows'] = $this->db->count_all("tb_donation_products");
 
-        //$config['base_url'] = base_url()."receiverView.php";
-        //$config['total_rows'] = 200;
-       // $config['per_page'] = 20;
+        $config['full_tag_open'] = "<div class = 'pagination'>";
+        $config['full_tag_close'] = "</div>";
 
-       // $this->pagination->initialize($config);
+        $this->pagination->initialize($config);
 
-        //echo $this->pagination->create_links();
-        $sql = "SELECT * FROM tb_donation_products";
-        $dbcon = $this->db->query($sql);
+        $data['dbcon'] = $this->db->select("product_name")->from("tb_donation_products")->limit($config['per_page'], $this->uri->segment(3))->get()->result_array();
 
-        $data['dbcon'] = $dbcon->result_array();
-
-        $this->load->view('header');
         $this->load->view("receiverView",$data);
-        $this->load->view('footer');
     }
 }
