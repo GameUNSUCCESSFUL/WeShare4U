@@ -97,14 +97,16 @@ class UserController extends CI_Controller
         // create the data object
         $data = new stdClass();
 
-        $this->load->helper('form');
-        $this->load->library('form_validation');
         // set validation rules
-        $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email|min_length[5]');
-        $this->form_validation->set_rules('password', 'Password', 'required|min_length[5]');
-        if ($this->form_validation->run() == false) {
+        $email = $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email|min_length[5]');
+        $password = $this->form_validation->set_rules('password', 'Password', 'required|min_length[5]');
+        $captcha = $this->input->post('captcha');
+
+        if ($email->run() == FALSE || $password->run() == false) {
             echo "error";
-        } else {
+        }elseif ($captcha == null){
+            echo "error_cap";
+        }else {
             // set variables from the form
             $email = $this->input->post('email');
             $password = $this->input->post('password');
