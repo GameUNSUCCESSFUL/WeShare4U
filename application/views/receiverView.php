@@ -35,6 +35,6 @@
 
     </div>
 </div>
-<?php echo $this->pagination->create_links(); ?>
+<?php echo $links ?>
 <?php include "footer.php"?>
 </body>
