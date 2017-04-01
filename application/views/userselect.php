@@ -14,10 +14,10 @@
 <div class="center">
 <div class="navbar-buttons ">
     <ul class="nav ace-nav">
-        <button type="button" class="btn btn-info btn-lg" style="width: 200px" onclick="location.href='<?php echo base_url();?>donor'">
+        <button type="button" id="donor_but" class="btn btn-info btn-lg" style="width: 200px" onclick="location.href='<?php echo base_url();?>donor'">
             บริจาค
         </button>
-        <button type="button" class="btn btn-success btn-lg" style="width: 200px" onclick="location.href='<?php echo base_url();?>receiver'">
+        <button type="button" id="receiver_but" class="btn btn-success btn-lg" style="width: 200px" onclick="location.href='<?php echo base_url();?>receiver'">
             รับบริจาค
         </button>
     </ul>

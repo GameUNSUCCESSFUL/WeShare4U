@@ -25,8 +25,8 @@
 <!--                    <div align="center" id="recaptcha" class="g-recaptcha"-->
 <!--                         data-sitekey="6LdM9RoUAAAAABEquyphv8VNH7W3l0aG92CKTYKc"></div>-->
 
-                    <div align="center" id="recaptcha" class="g-recaptcha"
-                         data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                    <div align="center" id="recaptcha" class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+
 
                     <div align="center">
                         <p style="color:red"><br><span id="error"></span></p></div>
