@@ -26,7 +26,7 @@
                 <button type="button" name="but-login" class="btn btn-info" data-toggle="modal"
                         data-target=".bs-example-modal-lg">Login
                 </button>
-                <button type="button" class="btn btn-success">
+                <button type="button" class="btn btn-success" onclick="location.href='<?php echo base_url();?>register'">
                     Register
                 </button>
             </ul>
