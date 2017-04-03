@@ -68,7 +68,7 @@
                     <div class="col-md-5">
                         <br><br><br>
                         <div class="thumbnail">
-                            <img src="<?php echo base_url('public/images/img_h2.jpg') ?>"
+                            <img src="<?php echo base_url('uploads/donateImages/'.$img_path) ?>"
                                  alt="...">
                         </div>
                     </div>
