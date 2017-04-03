@@ -94,51 +94,61 @@ class UserController extends CI_Controller
      */
     public function login()
     {
-        // create the data object
-        $data = new stdClass();
-
-        // set validation rules
-        $email = $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email|min_length[5]');
-        $password = $this->form_validation->set_rules('password', 'Password', 'required|min_length[5]');
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
         $captcha = $this->input->post('captcha');
-
-        if ($email->run() == FALSE || $password->run() == false) {
-            echo "error";
-        }elseif ($captcha == null){
-            echo "error_cap";
-        }else {
-            // set variables from the form
-            $email = $this->input->post('email');
-            $password = $this->input->post('password');
-//            $login = $this->UserModel->do_login($email, $password);
-//            if($login == true){
-//                echo $login;
-//            }elseif ($login == false){
-//                echo "feil";
-//            }else{
-//                echo $login;
-//            }
-            $check = $this->UserModel->do_login($email, $password);
-            if ($check == true) {
-                //echo "true";
-                $user_id = $this->UserModel->get_user_id_from_email($email);
-                $user = $this->UserModel->get_user($user_id);
-//
-                // set session user datas
-                $_SESSION['user_id'] = (int)$user->user_id;
-                $_SESSION['username'] = (string)$user->firstname;
-                $_SESSION['logged_in'] = (bool)true;
-
-
-                // user login ok
-                //$this->load->view('Welcome/select');
-                echo "true";
-
-            } else {
-                echo "login_fail";
-            }
-
+        if($captcha != null){
+            $result = $this->UserModel->do_login($email,$password);
+            echo $result;
+        }else if ($email == null || $password == null) {
+            echo 1;
+        }else{
+            echo "captcha";
         }
+//        // create the data object
+//        $data = new stdClass();
+//
+//        // set validation rules
+//        $email = $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email|min_length[5]');
+//        $password = $this->form_validation->set_rules('password', 'Password', 'required|min_length[5]');
+//        $captcha = $this->input->post('captcha');
+//
+//        if ($email->run() == FALSE || $password->run() == false) {
+//            echo "error";
+//        }elseif ($captcha == null){
+//            echo "error_cap";
+//        }else {
+//            // set variables from the form
+//            $email = $this->input->post('email');
+//            $password = $this->input->post('password');
+////            $login = $this->UserModel->do_login($email, $password);
+////            if($login == true){
+////                echo $login;
+////            }elseif ($login == false){
+////                echo "feil";
+////            }else{
+////                echo $login;
+////            }
+//            $check = $this->UserModel->do_login($email, $password);
+//            if ($check == true) {
+//                $user_id = $this->UserModel->get_user_id_from_email($email);
+//                $user = $this->UserModel->get_user($user_id);
+////
+//                // set session user datas
+//                $_SESSION['user_id'] = (int)$user->user_id;
+//                $_SESSION['username'] = (string)$user->firstname;
+//                $_SESSION['logged_in'] = (bool)true;
+//
+//
+//                // user login ok
+//                //$this->load->view('Welcome/select');
+//                echo "true";
+//
+//            } else {
+//                echo "login_fail";
+//            }
+//
+//        }
 
     }
 

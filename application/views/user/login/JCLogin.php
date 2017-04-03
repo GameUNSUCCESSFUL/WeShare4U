@@ -48,15 +48,24 @@
                                     dataType: "text",
                                     cache: false,
                                     success: function (data) {
-                                        if (data == "error") {
-                                            $("#error").text("Please Enter E-mail or Password");
-                                        }else if(data == "login_fail"){
-                                           $("#error").text("E-mail or Password is fail");
-                                        }else if(data == "error_cap"){
-                                            $("#error").text("Please Identify yourself");
-                                        }else if(data == "true"){
+                                        if(data == "error"){
+                                            $("#error").text("Password is invalid");
+                                        }else if(data == "success"){
                                             window.location.href="Welcome/select";
+                                        }else if(data == "captcha"){
+                                            $("#error").text("Please Identify yourself");
+                                        }else if(data == 1){
+                                            $("#error").text("Please enter Username or Password");
                                         }
+//                                        if (data == "error") {
+//                                            $("#error").text("Please Enter E-mail or Password");
+//                                        }else if(data == "login_fail"){
+//                                           $("#error").text("E-mail or Password is fail");
+//                                        }else if(data == "error_cap"){
+//                                            $("#error").text("Please Identify yourself");
+//                                        }else if(data == "true"){
+//                                            window.location.href="Welcome/select";
+//                                        }
                                     }
                                 });
                                 return false;

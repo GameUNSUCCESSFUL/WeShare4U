@@ -13,4 +13,7 @@ class ReceiverModel extends CI_Model
         parent::__construct();
     }
 
+    public function search_item($searchitem){
+        $this->db->select('product_name')->from('tb_donation_products')->like('product_name', $searchitem)->get()->result_array();
+    }
 }
