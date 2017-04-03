@@ -44,17 +44,26 @@ class UserModel extends CI_Model
 
     public function do_login($email, $password)
     {
-        $this->db->select('password');
-        $this->db->from('tb_donation_users');
-        $this->db->where('email', $email);
-        $hash = $this->db->get()->row('password');
-        if($hash != $password){
-            return false;
+        $passwordmd5 = md5($password);
+        $sql = "SELECT * FROM tb_donation_users WHERE email LIKE '".$email."' && password LIKE '".$passwordmd5."'";
+        $query = $this->db->query($sql)->result();
+        if($query){
+            $_SESSION["email"] = $query[0]->email;
+            return "success";
         }else{
-            return true;
+            return "error";
         }
-        //$check = $this->verify_password_hash($password, $hash);
-        //return $check;
+//        $this->db->select('password');
+//        $this->db->from('tb_donation_users');
+//        $this->db->where('email', $email);
+//        $hash = $this->db->get()->row('password');
+////        if($hash != $password){
+////            return false;
+////        }else{
+////            return true;
+////        }
+//        $check = $this->verify_password_hash($password, $hash);
+//        return $check;
     }
 
     /**

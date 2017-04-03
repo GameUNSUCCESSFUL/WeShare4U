@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <?php include "../includecss.php" ?>
+    <?php include "<?php echo base_url('public/css/includecss.php') ?>" ?>
 
 </head>
 <body class="bg">
