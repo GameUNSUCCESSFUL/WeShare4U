@@ -1,3 +1,4 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <!-- bootstrap & fontawesome -->
 <link rel="stylesheet" href="<?php echo base_url('public/css/bootstrap.css') ?>" />
 <link rel="stylesheet" href="<?php echo base_url('public/css/font-awesome.css') ?>" />
@@ -29,6 +30,7 @@
 <script src="<?php echo base_url('public/js/html5shiv.js') ?>"></script>
 <script src="<?php echo base_url('public/js/respond.js') ?>"></script>
 <script src="<?php echo base_url('public/js/jquery.js') ?>"></script>
+<script src="<?php echo base_url('public/js/my_js.js') ?>"></script>
 <![endif]-->
 
 <!-- Captcha -->
