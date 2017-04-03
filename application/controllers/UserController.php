@@ -12,6 +12,8 @@ class UserController extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->library(array('session'));
+        $this->load->helper(array('url'));
     }
 
 
@@ -49,9 +51,7 @@ class UserController extends CI_Controller
         if ($this->form_validation->run() === false) {
 
             // validation not ok, send validation errors to the view
-            $this->load->view('header');
             $this->load->view('user/register/register', $data);
-            $this->load->view('footer');
 
         } else {
 
@@ -70,9 +70,7 @@ class UserController extends CI_Controller
             if ($this->UserModel->create_user($email, $password, $firstname, $lastname, $identity_card, $district, $province, $zip_code, $address, $phone)) {
 
                 // user creation ok
-                $this->load->view('header');
                 $this->load->view('user/register/register_success', $data);
-                $this->load->view('footer');
 
             } else {
 
@@ -80,9 +78,7 @@ class UserController extends CI_Controller
                 $data->error = 'There was a problem creating your new account. Please try again.';
 
                 // send error to the view
-                $this->load->view('header');
                 $this->load->view('user/register/register', $data);
-                $this->load->view('footer');
 
             }
 
@@ -98,61 +94,61 @@ class UserController extends CI_Controller
      */
     public function login()
     {
-
-        // create the data object
-        $data = new stdClass();
-
-        // load form helper and validation library
-        $this->load->helper('form');
-        $this->load->library('form_validation');
-
-        // set validation rules
-        $this->form_validation->set_rules('username', 'Username', 'required|alpha_numeric');
-        $this->form_validation->set_rules('password', 'Password', 'required');
-
-        if ($this->form_validation->run() == false) {
-
-            // validation not ok, send validation errors to the view
-            $this->load->view('header');
-            $this->load->view('user/login/login');
-            $this->load->view('footer');
-
-        } else {
-
-            // set variables from the form
-            $username = $this->input->post('username');
-            $password = $this->input->post('password');
-
-            if ($this->user_model->resolve_user_login($username, $password)) {
-
-                $user_id = $this->user_model->get_user_id_from_username($username);
-                $user = $this->user_model->get_user($user_id);
-
-                // set session user datas
-                $_SESSION['user_id'] = (int)$user->id;
-                $_SESSION['username'] = (string)$user->username;
-                $_SESSION['logged_in'] = (bool)true;
-                $_SESSION['is_confirmed'] = (bool)$user->is_confirmed;
-                $_SESSION['is_admin'] = (bool)$user->is_admin;
-
-                // user login ok
-                $this->load->view('header');
-                $this->load->view('user/login/login_success', $data);
-                $this->load->view('footer');
-
-            } else {
-
-                // login failed
-                $data->error = 'Wrong username or password.';
-
-                // send error to the view
-                $this->load->view('header');
-                $this->load->view('user/login/login', $data);
-                $this->load->view('footer');
-
-            }
-
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+        $captcha = $this->input->post('captcha');
+        if($captcha != null){
+            $result = $this->UserModel->do_login($email,$password);
+            echo $result;
+        }else if ($email == null || $password == null) {
+            echo 1;
+        }else{
+            echo "captcha";
         }
+//        // create the data object
+//        $data = new stdClass();
+//
+//        // set validation rules
+//        $email = $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email|min_length[5]');
+//        $password = $this->form_validation->set_rules('password', 'Password', 'required|min_length[5]');
+//        $captcha = $this->input->post('captcha');
+//
+//        if ($email->run() == FALSE || $password->run() == false) {
+//            echo "error";
+//        }elseif ($captcha == null){
+//            echo "error_cap";
+//        }else {
+//            // set variables from the form
+//            $email = $this->input->post('email');
+//            $password = $this->input->post('password');
+////            $login = $this->UserModel->do_login($email, $password);
+////            if($login == true){
+////                echo $login;
+////            }elseif ($login == false){
+////                echo "feil";
+////            }else{
+////                echo $login;
+////            }
+//            $check = $this->UserModel->do_login($email, $password);
+//            if ($check == true) {
+//                $user_id = $this->UserModel->get_user_id_from_email($email);
+//                $user = $this->UserModel->get_user($user_id);
+////
+//                // set session user datas
+//                $_SESSION['user_id'] = (int)$user->user_id;
+//                $_SESSION['username'] = (string)$user->firstname;
+//                $_SESSION['logged_in'] = (bool)true;
+//
+//
+//                // user login ok
+//                //$this->load->view('Welcome/select');
+//                echo "true";
+//
+//            } else {
+//                echo "login_fail";
+//            }
+//
+//        }
 
     }
 

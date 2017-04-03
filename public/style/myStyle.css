@@ -6,6 +6,9 @@
     padding: 100px;
     background-color: rgba(26, 26, 26,0.2); /* #1a1a1a */
 }
+.bg{
+    background-image: url("../images/img_h1.jpg");
+}
 /* Add a gray background color and some padding to the footer */
 footer {
     background-color: #438eb9;
@@ -20,6 +23,9 @@ footer {
     width: 100%; /* Set width to 100% */
     margin: auto;
     min-height:200px;
+}
+.mainpad{
+    padding: 5px;
 }
 
 /* Hide the carousel text when the screen is less than 600 pixels wide */

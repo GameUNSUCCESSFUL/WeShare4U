@@ -1,3 +1,4 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,16 +9,16 @@
     <?php include "includecss.php" ?>
 
 </head>
-<body style="background-image: <?php base_url('public/images/img_h1.jpg') ?>;">
+<body class="bg">
 <!-- nav -->
 <?php include "navbar.php"?>
 <div class="center">
 <div class="navbar-buttons ">
     <ul class="nav ace-nav">
-        <button type="button" class="btn btn-info btn-lg" style="width: 200px">
+        <button type="button" id="donor_but" class="btn btn-info btn-lg" style="width: 200px" onclick="location.href='<?php echo base_url();?>donor'">
             บริจาค
         </button>
-        <button type="button" class="btn btn-success btn-lg" style="width: 200px">
+        <button type="button" id="receiver_but" class="btn btn-success btn-lg" style="width: 200px" onclick="location.href='<?php echo base_url();?>receiver'">
             รับบริจาค
         </button>
     </ul>

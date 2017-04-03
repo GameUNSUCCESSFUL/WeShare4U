@@ -18,19 +18,11 @@ class UserModel extends CI_Model
      */
     public function __construct()
     {
-
         parent::__construct();
+        $this->load->database();
     }
 
-    /**
-     * create_user function.
-     *
-     * @access public
-     * @param mixed $username
-     * @param mixed $email
-     * @param mixed $password
-     * @return bool true on success, false on failure
-     */
+
     public function create_user($email, $password, $firstname, $lastname, $identity_card, $district, $province, $zip_code, $address, $phone)
     {
 
@@ -45,32 +37,33 @@ class UserModel extends CI_Model
             'zip_code' => $zip_code,
             'address' => $address,
             'phone' => $phone,
-
-
         );
-
         return $this->db->insert('tb_donation_users', $data);
-
     }
 
-    /**
-     * resolve_user_login function.
-     *
-     * @access public
-     * @param mixed $username
-     * @param mixed $password
-     * @return bool true on success, false on failure
-     */
-    public function resolve_user_login($username, $password)
+
+    public function do_login($email, $password)
     {
-
-        $this->db->select('password');
-        $this->db->from('users');
-        $this->db->where('username', $username);
-        $hash = $this->db->get()->row('password');
-
-        return $this->verify_password_hash($password, $hash);
-
+        $passwordmd5 = md5($password);
+        $sql = "SELECT * FROM tb_donation_users WHERE email LIKE '".$email."' && password LIKE '".$passwordmd5."'";
+        $query = $this->db->query($sql)->result();
+        if($query){
+            $_SESSION["email"] = $query[0]->email;
+            return "success";
+        }else{
+            return "error";
+        }
+//        $this->db->select('password');
+//        $this->db->from('tb_donation_users');
+//        $this->db->where('email', $email);
+//        $hash = $this->db->get()->row('password');
+////        if($hash != $password){
+////            return false;
+////        }else{
+////            return true;
+////        }
+//        $check = $this->verify_password_hash($password, $hash);
+//        return $check;
     }
 
     /**
@@ -80,14 +73,12 @@ class UserModel extends CI_Model
      * @param mixed $username
      * @return int the user id
      */
-    public function get_user_id_from_username($username)
+    public function get_user_id_from_email($email)
     {
-
-        $this->db->select('id');
-        $this->db->from('users');
-        $this->db->where('username', $username);
-        return $this->db->get()->row('id');
-
+        $this->db->select('user_id');
+        $this->db->from('tb_donation_users');
+        $this->db->where('email', $email);
+        return $this->db->get()->row('user_id');
     }
 
     /**
@@ -99,11 +90,9 @@ class UserModel extends CI_Model
      */
     public function get_user($user_id)
     {
-
-        $this->db->from('users');
-        $this->db->where('id', $user_id);
+        $this->db->from('tb_donation_users');
+        $this->db->where('user_id', $user_id);
         return $this->db->get()->row();
-
     }
 
     /**
@@ -115,9 +104,7 @@ class UserModel extends CI_Model
      */
     private function hash_password($password)
     {
-
         return password_hash($password, PASSWORD_BCRYPT);
-
     }
 
     /**
@@ -130,9 +117,7 @@ class UserModel extends CI_Model
      */
     private function verify_password_hash($password, $hash)
     {
-
         return password_verify($password, $hash);
-
     }
 
 }
