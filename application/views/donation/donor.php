@@ -14,10 +14,6 @@
 <?php $this->load->view('navbar'); ?>
 
 <!--input-->
-<div class="center">
-    <div class="navbar-buttons">
-        <ul class="nav ace-nav">
-            <div class="container">
                 <div class="row">
 
                     <!--Sidebar-->
@@ -25,19 +21,17 @@
                     <!--/.Sidebar-->
 
                     <!--Main column-->
-                    <div class="col-lg-12">
+                    <div  class="col-lg-2"></div>
+                    <div class="col-lg-8">
 
                         <!--First row-->
                         <div class="row">
                             <div class="col-lg-12">
 
-
-                                <br>
-
                                 <h2 align="center" class="h2-responsive" style="color: white">
                                     กรอกข้อมูลสิ่งของที่บริจาค</h2>
 
-                                <br><br><br>
+                                <br>
 
                                 <?php echo form_open_multipart("DonateController/add"); ?>
                                 <table align="center" class="table">
@@ -109,7 +103,7 @@
                                     </tr>
                                     <tr class="active">
                                         <td></td>
-                                        <td> <img id='output' height=500 width=400 /></td>
+                                        <td> <img id='output' height=300 width=300 /></td>
                                         <td></td>
                                     </tr>
                                     <tr class="active">
@@ -139,9 +133,6 @@
                     </div>
                     <!--/.Main layout-->
                 </div>
-        </ul>
-    </div>
-</div>
 <script type="text/javascript">
 
         $(document).ready(function() {
