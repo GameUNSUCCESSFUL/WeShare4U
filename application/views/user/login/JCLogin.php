@@ -28,7 +28,7 @@
                     <div align="center" id="g-recaptcha-response" class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
 
                     <div align="center">
-                        <p style="color:red"><br><span id="error"></span></p></div>
+                        <p style="color:red"><br><span id="error"> </span></p></div>
                     <div align="center">
                         <button type="submit" id="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
                     </div>

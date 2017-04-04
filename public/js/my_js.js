@@ -11,3 +11,5 @@ function openFile() {
     };
     reader.readAsDataURL(input.files[0]);
 };
+
+
