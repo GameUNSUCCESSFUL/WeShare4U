@@ -52,7 +52,7 @@
 
                         <div class="row">
                             <br><br><br><br><br><br><br>
-                            <button type="submit" id="bt" name="but_donate" class="btn btn-warning" onclick="location.href='<?php echo site_url('DonateController/show_edit/'.$row['product_id']);?>'" >
+                            <button type="submit" id="bt" name="but_edit" class="btn btn-warning" onclick="location.href='<?php echo site_url('DonateController/show_edit/'.$row['product_id']);?>'" >
                                 แก้ไข
                             </button>
                             <button type="submit" id="bt" name="but_donate" class="btn btn-primary" onclick="location.href='<?php echo site_url('donor');?>'" >
