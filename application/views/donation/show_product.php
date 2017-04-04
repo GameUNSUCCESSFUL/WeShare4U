@@ -14,66 +14,61 @@
 <?php $this->load->view('navbar'); ?>
 
 <!--input-->
-<div class="center">
-    <div class="navbar-buttons">
-        <ul class="nav ace-nav">
-            <div class="container">
-                <div class="row">
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <br>
+        <div class="thumbnail">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <br><br><br>
+                    <div class="thumbnail">
 
-                    <!--Sidebar-->
-
-                    <!--/.Sidebar-->
-
-                    <!--Main column-->
-                    <div class="col-lg-12">
-
-                        <!--First row-->
+                        <?php foreach ($rs->result_array() as $row): ?>
+                        <img src="<?php echo base_url('uploads/donateImages/'.$row['img_path']) ?>"
+                             alt="...">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="caption">
                         <div class="row">
-                            <div class="col-lg-12">
 
+                            <?php $_SESSION['img_path'] = $row['img_path'];
+                            $_SESSION['product_id'] = $row['product_id'];?>
+                            <br>
+                            <h2>ชื่อของบริจาค : <?php echo $row['product_name']; ?></h2>
+                            <h5>
+                                <p>สี : <?php echo $row['product_color'] ?></p>
+                                <p>จำนวน : <?php echo $row['weight_number'] ?></p>
+                                <p>น้ำหนัก : <?php echo $row['weight_number'] . "  " . $row['weight_type'] ?></p>
+                                <p>ขนาด : <?php echo $row['size_width'] . " x " . $row['size_long'] . "  " . $row['size_type'] ?> </p>
+                                <p>รายละเเอียด : <?php echo $row['product_detail'] ?></p>
+                                <p>ประเภทสินค้า : <?php echo $row['product_type'] ?></p>
 
-                                <br>
+                            </h5>
+                        </div>
+                        <?php endforeach; ?>
 
-                                <h2 align="center" class="h2-responsive" style="color: white">
-                                    ทำการบริจาคเสร็จสิ้น</h2>
-
-                                <br><br><br>
-
-                                <?php foreach ($rs->result_array() as $row): ?>
-                                    <?php $_SESSION['img_path'] = $row['img_path'];
-                                          $_SESSION['product_id'] = $row['product_id'];?>
-
-                                <h3><?php echo $row['product_id']; ?></h3>
-                                <h3><?php echo $row['product_name']; ?></h3>
-                                <h3><?php echo $row['product_number']; ?></h3>
-                                <h3><?php echo $row['product_color']; ?></h3>
-                                <h3><?php echo $row['weight_number'] . " " . $row['weight_type']; ?></h3>
-                                <h3><?php echo $row['size_width'] . "x" . $row['size_long'] . " " . $row['size_type']; ?></h3>
-                                <h3><?php echo $row['product_type']; ?></h3>
-                                <h3><?php echo $row['product_detail']; ?></h3>
-                                <img src="<?php echo base_url('uploads/donateImages/') . $row['img_path']; ?>"
-                                     width="200" height="300">
-
-                                <?php endforeach; ?>
-
-                                <button type="submit" id="bt" name="but_donate" class="btn btn-warning" onclick="location.href='<?php echo site_url('DonateController/show_edit/'.$row['product_id']);?>'" >
-                                    แก้ไข
-                                </button>
-                                <button type="submit" id="bt" name="but_donate" class="btn btn-primary" onclick="location.href='<?php echo site_url('DonateController/add');?>'" >
-                                    บริจาคเพิ่ม
-                                </button>
-                            </div>
-                            <!--/.Main column-->
+                        <div class="row">
+                            <br><br><br><br><br><br><br>
+                            <button type="submit" id="bt" name="but_donate" class="btn btn-warning" onclick="location.href='<?php echo site_url('DonateController/show_edit/'.$row['product_id']);?>'" >
+                                แก้ไข
+                            </button>
+                            <button type="submit" id="bt" name="but_donate" class="btn btn-primary" onclick="location.href='<?php echo site_url('DonateController/add');?>'" >
+                                บริจาคเพิ่ม
+                            </button>
                         </div>
                     </div>
-                    <!--/.Main layout-->
                 </div>
             </div>
-        </ul>
+            <div><br></div>
+        </div>
     </div>
 </div>
 
+
 <!-- footer -->
-<?php $this->load->view('includecss'); ?>
+<?php $this->load->view('footer'); ?>
 </body>
 </html>
