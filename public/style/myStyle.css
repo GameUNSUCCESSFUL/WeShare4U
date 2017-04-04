@@ -29,7 +29,7 @@ a:active{
 a:visited{
     color: white;
 }
-.bg{
+body{
     background-image: url("../images/bg.jpg");
 }
 /* Add a gray background color and some padding to the footer */
