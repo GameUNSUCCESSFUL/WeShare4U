@@ -11,7 +11,7 @@
 </head>
 <body class="bg">
 <!-- nav -->
-<?php $this->load->view('navbar'); ?>
+<?php $this->load->view('navbarlogin'); ?>
 
 <!--input-->
 <div class="row">
@@ -55,7 +55,7 @@
                             <button type="submit" id="bt" name="but_donate" class="btn btn-warning" onclick="location.href='<?php echo site_url('DonateController/show_edit/'.$row['product_id']);?>'" >
                                 แก้ไข
                             </button>
-                            <button type="submit" id="bt" name="but_donate" class="btn btn-primary" onclick="location.href='<?php echo site_url('DonateController/add');?>'" >
+                            <button type="submit" id="bt" name="but_donate" class="btn btn-primary" onclick="location.href='<?php echo site_url('donor');?>'" >
                                 บริจาคเพิ่ม
                             </button>
                         </div>

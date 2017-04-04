@@ -8,7 +8,7 @@
     <?php include "includecss.php" ?>
 </head>
 <body>
-<?php include "navbar.php" ?>
+<?php include "navbarlogin.php" ?>
 <h1 align="center">Show Data</h1>
 
 <div class="container">

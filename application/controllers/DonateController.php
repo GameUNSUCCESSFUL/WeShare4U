@@ -51,7 +51,7 @@ class DonateController extends CI_Controller
         if ($this->upload->do_upload('product_image')) {
             $img_path = $img_name . $this->upload->data('file_ext');
             $insert_id = $this->DonorModel->add_product($product_name, $product_color, $product_number, $weight_number, $weight_type, $size_width, $size_long, $size_type, $product_detail,  $product_type, $user_id, $img_path);
-            log_message('debug',print_r("insert id : ".$insert_id,TRUE));
+//            log_message('debug',print_r("insert id : ".$insert_id,TRUE));
             $this->show_last_donate($insert_id);
         } else {
             echo $this->upload->display_errors();
@@ -90,20 +90,20 @@ class DonateController extends CI_Controller
         );
         $this->load->library('upload', $config);
 
-        $this->form_validation->set_rules('product_name', 'product_name', 'required');
-        $this->form_validation->set_rules('product_color', 'product_color', 'required');
-        $this->form_validation->set_rules('product_number', 'product_number', 'required');
-        $this->form_validation->set_rules('weight_number', 'weight_number', 'required');
-        $this->form_validation->set_rules('weight_type', 'weight_type', 'required');
-        $this->form_validation->set_rules('size_width', 'size_width', 'required');
-        $this->form_validation->set_rules('size_long', 'size_long', 'required');
-        $this->form_validation->set_rules('size_type', 'size_type', 'required');
-        $this->form_validation->set_rules('product_detail', 'product_detail', 'required');
-        $this->form_validation->set_rules('product_type', 'product_type', 'required');
-
-        if($this->form_validation->run() === false){
-            echo "error";
-        }else{
+//        $this->form_validation->set_rules('product_name', 'product_name', 'required');
+//        $this->form_validation->set_rules('product_color', 'product_color', 'required');
+//        $this->form_validation->set_rules('product_number', 'product_number', 'required');
+//        $this->form_validation->set_rules('weight_number', 'weight_number', 'required');
+//        $this->form_validation->set_rules('weight_type', 'weight_type', 'required');
+//        $this->form_validation->set_rules('size_width', 'size_width', 'required');
+//        $this->form_validation->set_rules('size_long', 'size_long', 'required');
+//        $this->form_validation->set_rules('size_type', 'size_type', 'required');
+//        $this->form_validation->set_rules('product_detail', 'product_detail', 'required');
+//        $this->form_validation->set_rules('product_type', 'product_type', 'required');
+//
+//        if($this->form_validation->run() === false){
+//            echo "error";
+//        }else{
             $product_id = $this->input->post("product_id");
             $product_name = $this->input->post("product_name");
             $product_color = $this->input->post("product_color");
@@ -136,7 +136,7 @@ class DonateController extends CI_Controller
                     echo $this->upload->display_errors();
                 }
             }
-        }
+//        }
 
     }
 }

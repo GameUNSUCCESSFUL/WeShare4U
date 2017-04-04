@@ -8,7 +8,7 @@
         <!-- /section:basics/sidebar.mobile.toggle -->
         <div class="navbar-header pull-left">
             <!-- #section:basics/navbar.layout.brand -->
-            <a href="#" class="navbar-brand">
+            <a href="<?php echo base_url();?>" class="navbar-brand">
                 <small>
                     <i class="fa fa-leaf"></i>
                     <div>WeShared4U</div>
@@ -18,13 +18,24 @@
         </div>
         <!-- #section:basics/navbar.dropdown -->
         <div class="collapse navbar-collapse pull-right" role="navigation">
-            <ul>
-                <li class="padding">
-                    <button type="button" name="but-login" class="btn padding" data-toggle="modal"
-                            data-target=".bs-example-modal-lg">เข้าสู่ระบบ</button>
-                    <div align="center"><a href="#" class="padding">สมัครสมาชิก</a></div>
-                </li>
-            </ul>
+            <?php if (isset($_SESSION['email'])) : ?>
+                 <ul>
+                    <li class="padding2">
+                        <div align="right">
+                            ยินดีต้อนรับ <a href="#">สุขพัฒน์ เทพารส</a><br>
+                            <a href="<?php echo base_url('logout')?>">ออกจากระบบ</a>
+                        </div>
+                    </li>
+                </ul>
+            <?php else: ?>
+                <ul>
+                    <li class="padding">
+                        <button type="button" name="but-login" class="btn padding" data-toggle="modal"
+                                data-target=".bs-example-modal-lg">เข้าสู่ระบบ</button>
+                        <div align="center"><a href="<?php echo base_url('register')?>" class="padding">สมัครสมาชิก</a></div>
+                    </li>
+                </ul>
+            <?php endif; ?>
         </div>
 
         <div class="collapse navbar-collapse" role="navigation">

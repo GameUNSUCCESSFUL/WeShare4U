@@ -11,7 +11,7 @@
 </head>
 <body class="bg">
 <!-- nav -->
-<?php include "navbar.php"?>
+<?php include "navbarlogin.php"?>
 <div class="center">
 <div class="navbar-buttons ">
     <ul class="nav ace-nav">

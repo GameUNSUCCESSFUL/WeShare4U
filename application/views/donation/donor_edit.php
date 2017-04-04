@@ -11,7 +11,7 @@
 </head>
 <body class="bg">
 <!-- nav -->
-<?php $this->load->view('navbar'); ?>
+<?php $this->load->view('navbarlogin'); ?>
 
 <!--input-->
 
@@ -98,23 +98,22 @@
                     </tr>
                     <tr class="active">
                         <td><h4>ประเภทของเล่น :</h4></td>
-                        <td><select class="form-control" name="product_type">
-                                <option value="open" <?php if ($row['product_type'] === 'open') echo ' selected="selected"' ?> >
-                                    ของเล่นปลายเปิด
-                                </option>
-                                <option value="objective" <?php if ($row['product_type'] === 'objective') echo ' selected="selected"' ?> >
-                                    ของเล่นตามจุดประสงค์
-                                </option>
-                                <option value="role" <?php if ($row['product_type'] === 'role') echo ' selected="selected"' ?> >
-                                    ของเล่นส่งเสริมบทบาทสมมุติ
-                                </option>
-                                <option value="skill" <?php if ($row['product_type'] === 'skill') echo ' selected="selected"' ?> >
-                                    ของเล่นเสริมทักษะร่างกาย
-                                </option>
-                                <option value="art" <?php if ($row['product_type'] === 'art') echo ' selected="selected"' ?> >
-                                    ของเล่นศิลปะ
-                                </option>
-                            </select></td>
+                        <td>
+                            <select class="form-control" name="product_type">
+                                    <option value="toy_car" <?php if ($row['product_type'] === 'toy_car') echo ' selected="selected"' ?> >รถของเล่น</option>
+                                    <option value="doll" <?php if ($row['product_type'] === 'doll') echo ' selected="selected"' ?> >ตุ๊กตา</option>
+                                    <option value="musical" <?php if ($row['product_type'] === 'musical') echo ' selected="selected"' ?> >เครื่องดนตรีของเล่น</option>
+                                    <option value="lego" <?php if ($row['product_type'] === 'lego') echo ' selected="selected"' ?> >ตัวต่อเลโก้</option>
+                                    <option value="robot" <?php if ($row['product_type'] === 'robot') echo ' selected="selected"' ?> >หุ่นยนต์</option>
+                                    <option value="puzzle" <?php if ($row['product_type'] === 'puzzle') echo ' selected="selected"' ?> >เกมปริศนา</option>
+                                    <option value="ball" <?php if ($row['product_type'] === 'ball') echo ' selected="selected"' ?> >ลูกบอล</option>
+                                    <option value="music" <?php if ($row['product_type'] === 'music') echo ' selected="selected"' ?> >ของเล่นที่มีเสียงดนตรี</option>
+                                    <option value="tug" <?php if ($row['product_type'] === 'tug') echo ' selected="selected"' ?> >ของเล่นลากจูง</option>
+                                    <option value="shake" <?php if ($row['product_type'] === 'opeshaken') echo ' selected="selected"' ?> >ของเล่นเขย่า</option>
+                                    <option value="wooden" <?php if ($row['product_type'] === 'wooden') echo ' selected="selected"' ?> >ของเล่นไม้</option>
+                                    <option value="kitchen" <?php if ($row['product_type'] === 'kitchen') echo ' selected="selected"' ?> >ของเล่นเครื่องครัว</option>
+                            </select>
+                        </td>
                         <td></td>
                     </tr>
                     <tr class="active">
@@ -132,9 +131,9 @@
                     <tr class="active">
                         <td></td>
                         <td>
-                            <button id="bt" name="but_donate" class="btn">
-                                ของบริจาค
-                            </button>
+<!--                            <button id="bt" name="but_donate" class="btn">-->
+<!--                                ของบริจาค-->
+<!--                            </button>-->
                             <button type="submit" id="bt" name="but_donate" class="btn btn-warning">
                                 แก้ไข
                             </button>

@@ -11,7 +11,7 @@
 </head>
 <body class="bg">
 <!-- nav -->
-<?php $this->load->view('navbar'); ?>
+<?php $this->load->view('navbarlogin'); ?>
 
 <!--input-->
                 <div class="row">
@@ -87,13 +87,22 @@
                                     </tr>
                                     <tr class="active">
                                         <td><h4>ประเภทของเล่น :</h4></td>
-                                        <td><select class="form-control" name="product_type">
-                                                <option value="open" selected>ของเล่นปลายเปิด</option>
-                                                <option value="objective">ของเล่นตามจุดประสงค์</option>
-                                                <option value="role">ของเล่นส่งเสริมบทบาทสมมุติ</option>
-                                                <option value="skill">ของเล่นเสริมทักษะร่างกาย</option>
-                                                <option value="art">ของเล่นศิลปะ</option>
-                                            </select></td>
+                                        <td>
+                                            <select class="form-control" name="product_type">
+                                                <option value="toy_car" selected>รถของเล่น</option>
+                                                <option value="doll">ตุ๊กตา</option>
+                                                <option value="musical">เครื่องดนตรีของเล่น</option>
+                                                <option value="lego">ตัวต่อเลโก้</option>
+                                                <option value="robot">หุ่นยนต์</option>
+                                                <option value="puzzle">เกมปริศนา</option>
+                                                <option value="ball">ลูกบอล</option>
+                                                <option value="music">ของเล่นที่มีเสียงดนตรี</option>
+                                                <option value="tug">ของเล่นลากจูง</option>
+                                                <option value="shake">ของเล่นเขย่า</option>
+                                                <option value="wooden">ของเล่นไม้</option>
+                                                <option value="kitchen">ของเล่นเครื่องครัว</option>
+                                            </select>
+                                        </td>
                                         <td></td>
                                     </tr>
                                     <tr class="active">
@@ -175,6 +184,6 @@
 //    });
 </script>
 <!-- footer -->
-<?php $this->load->view('includecss'); ?>
+<?php $this->load->view('footer'); ?>
 </body>
 </html>
