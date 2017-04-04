@@ -6,8 +6,25 @@
     padding: 100px;
     background-color: rgba(26, 26, 26,0.2); /* #1a1a1a */
 }
+.padding{
+    width:100px;
+    margin-top: 5px;
+    list-style-type: none;
+}
+.padding2{
+    width:200px;
+    color: white;
+    margin-top: 15px;
+    list-style-type: none;
+}
+a:hover{
+    color: white;
+}
+a:visited {
+    color: white;
+}
 .bg{
-    background-image: url("../images/img_h1.jpg");
+    background-image: url("../images/bg.jpg");
 }
 /* Add a gray background color and some padding to the footer */
 footer {
