@@ -25,7 +25,7 @@
                     <br><br><br>
                     <div class="thumbnail">
                         <img src="<?php echo base_url('uploads/donateImages/' . $img_path) ?>"
-                             alt="...">
+                             width="200" height="300" alt="...">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -46,8 +46,8 @@
 
                         <div class="row">
                             <br><br><br><br><br><br><br>
-                            <button class="btn btn-success">รับบริจาค</button>
-                            <button class="btn btn-warning">ย้อนกลับ</button>
+                            <button class="btn btn-success" onclick="location.href='<?php echo base_url('receive');?>'">รับบริจาค</button>
+                            <button class="btn btn-warning" onclick="location.href='<?php echo site_url('receiver');?>'" >ย้อนกลับ</button>
                         </div>
                     </div>
                 </div>

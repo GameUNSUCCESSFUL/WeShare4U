@@ -39,25 +39,25 @@
                                     <tr class="active">
                                         <td><h4>ชื่อของที่บริจาค :</h4></td>
                                         <td><input type="text" class="form-control" id="product_name" name="product_name"
-                                                   placeholder="ชื่อของบริจาค"></td>
+                                                   placeholder="ชื่อของที่ท่านต้องการบริจาค: ตุ๊กตา"></td>
                                         <td></td>
                                     </tr>
                                     <tr class="active">
                                         <td><h4>สี :</h4></td>
-                                        <td><input type="text" class="form-control" id="product_color" name="product_color" placeholder="แดง"></td>
+                                        <td><input type="text" class="form-control" id="product_color" name="product_color" placeholder="สีของที่ท่านต้องการบริจาค: แดง"></td>
                                         <td></td>
                                     </tr>
 
                                     <tr class="active">
                                         <td><h4>จำนวน :</h4></td>
-                                        <td><input type="number" class="form-control" id="product_number" name="product_number" placeholder="6">
+                                        <td><input type="number" class="form-control" id="product_number" name="product_number" placeholder="จำนวนของที่ท่านต้องการบริจาค: 3">
                                         </td>
                                         <td>ชิ้น</td>
                                     </tr>
 
                                     <tr class="active">
                                         <td><h4>น้ำหนัก :</h4></td>
-                                        <td><input type="number" class="form-control" id="weight_number" name="weight_number" placeholder="20"></td>
+                                        <td><input type="number" class="form-control" id="weight_number" name="weight_number" placeholder="น้ำหนักของสิ่งที่ท่านต้องการบริจาค: 35"></td>
                                         <td><select class="form-control" id="weight_type" name="weight_type">
                                                 <option value="กรัม" selected>กรัม</option>
                                                 <option value="กิโลกรัม">กิโลกรัม</option>
@@ -66,12 +66,12 @@
 
                                     <tr class="active">
                                         <td><h4>ขนาด :</h4></td>
-                                        <td><input type="number" id="size_width" name="size_width" class="form-control" placeholder="กว้าง" ></td>
+                                        <td><input type="number" id="size_width" name="size_width" class="form-control" placeholder="ความกว้าง: 25" ></td>
                                         <td></td>
                                     </tr>
                                     <tr class="active">
                                         <td colspan="" rowspan="" headers=""></td>
-                                        <td><input type="number" id="size_long" name="size_long" class="form-control" placeholder="ยาว" ></td>
+                                        <td><input type="number" id="size_long" name="size_long" class="form-control" placeholder="ความยาว: 30" ></td>
                                         <td>
                                             <select class="form-control" id="size_type" name="size_type">
                                                 <option value="เซนติเมตร" selected>เซนติเมตร</option>
@@ -82,7 +82,7 @@
 
                                     <tr class="active">
                                         <td><h4>รายละเอียด :</h4></td>
-                                        <td><textarea type="text" class="form-control" placeholder="รายละเอียดเพิ่มเติม" id="product_detail" name="product_detail" ></textarea></td>
+                                        <td><textarea type="text" class="form-control" placeholder="รายละเอียดของบริจาคเพิ่มเติม" id="product_detail" name="product_detail" ></textarea></td>
                                         <td></td>
                                     </tr>
                                     <tr class="active">

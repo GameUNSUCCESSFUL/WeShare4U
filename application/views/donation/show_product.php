@@ -27,7 +27,7 @@
 
                         <?php foreach ($rs->result_array() as $row): ?>
                         <img src="<?php echo base_url('uploads/donateImages/'.$row['img_path']) ?>"
-                             alt="...">
+                             width="200" height="300" alt="...">
                     </div>
                 </div>
                 <div class="col-md-6">

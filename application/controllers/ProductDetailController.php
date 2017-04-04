@@ -13,5 +13,10 @@ class productDetailController extends CI_Controller
 
     }
 
+    public function receive()
+    {
+        $this->load->view("receive");
+    }
+
 
 }

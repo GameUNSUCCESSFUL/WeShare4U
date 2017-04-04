@@ -43,7 +43,7 @@
                                 var password = $('#password').val();
                                 $.ajax({
                                     type: "POST",
-                                    url: "<?php echo base_url('UserController/login') ?>",
+                                    url: "<?php echo base_url('index.php/UserController/login'); ?>",
                                     data: {email: email, password: password, captcha: captcha},
                                     dataType: "text",
                                     cache: false,
@@ -51,7 +51,7 @@
                                         if(data == "error"){
                                             $("#error").text("Password is invalid");
                                         }else if(data == "success"){
-                                            window.location.href="Welcome/select";
+                                            window.location.href="<?php echo base_url('index.php/Welcome/select'); ?>";
                                         }else if(data == "captcha"){
                                             $("#error").text("Please Identify yourself");
                                         }else if(data == 1){

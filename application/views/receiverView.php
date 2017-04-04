@@ -38,7 +38,7 @@
                             <div class="caption">
                                 <h1 align="center"> <?php echo $r['product_name'] ?> </h1>
                                 <div align="right">
-                                    <a class="btn" href="<?php echo base_url('productDetailController?id='.$r['product_id'])?>">see more</a>
+                                    <a style="color: #0000FF" href="<?php echo base_url('index.php/productDetailController?id='.$r['product_id'])?>">รายละเอียดเพิ่มเติม...</a>
                                 </div>
                             </div>
                         </div>

@@ -130,6 +130,11 @@
                     </tr>
                     <tr class="active">
                         <td></td>
+                        <td>::<span id="result" style="color:red"></span></td>
+                        <td></td>
+                    </tr>
+                    <tr class="active">
+                        <td></td>
                         <td>
 <!--                            <button id="bt" name="but_donate" class="btn">-->
 <!--                                ของบริจาค-->
@@ -150,7 +155,27 @@
     </div>
 </div>
 </div>
+<script type="text/javascript">
 
+    $(document).ready(function() {
+        $('#bt').bind("click",function()
+        {
+            var product_name = $('#product_name').val();
+            var product_color = $('#product_color').val();
+            var product_number = $('#product_number').val();
+            var weight_number = $('#weight_number').val();
+            var size_width = $('#size_width').val();
+            var size_long = $('#size_long').val();
+            var product_detail = $('#product_detail').val();
+            var product_type = $('#product_type').val();
+            var product_image = $('#product_image').val();
+            if(product_image =='' || product_name =='' || product_color == '' || product_number =='' || weight_number =='' || size_width =='' || size_long == '' || product_detail == '' || product_type ==''){
+                $("#result").text("Please enter a value with a valid extension");
+                return false;
+            }
+        });
+    });
+</script>
 <!-- footer -->
 <?php $this->load->view('footer'); ?>
 </body>

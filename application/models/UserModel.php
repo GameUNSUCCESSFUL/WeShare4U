@@ -49,6 +49,8 @@ class UserModel extends CI_Model
         $query = $this->db->query($sql)->result();
         if ($query) {
             $_SESSION["email"] = $query[0]->email;
+            $_SESSION["firstname"] = $query[0]->firstname;
+            $_SESSION["lastname"] = $query[0]->lastname;
             $_SESSION['logged_in'] = true;
             return "success";
         } else {

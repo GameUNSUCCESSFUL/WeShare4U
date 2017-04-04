@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+header('Access-Control-Allow-Origin: *');
 /**
  * Created by PhpStorm.
  * User: Game
@@ -15,7 +15,6 @@ class UserController extends CI_Controller
         $this->load->library(array('session'));
         $this->load->helper(array('url'));
     }
-
 
     public function index()
     {
