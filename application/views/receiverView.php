@@ -32,11 +32,13 @@
                 <div class="col-md-3">
                     <div class="block">
                         <div class="thumbnail">
-                            <!--<img src="img/img1.jpg" alt="" class="img-responsive">-->
+                            <img src="<?php echo base_url('uploads/donateImages/'.$r['img_path']) ?>"
+                                 alt="...">
+
                             <div class="caption">
                                 <h1 align="center"> <?php echo $r['product_name'] ?> </h1>
                                 <div align="right">
-                                    <a class="btn" href="#">see more</a>
+                                    <a class="btn" href="<?php echo base_url('productDetailController?id='.$r['product_id'])?>">see more</a>
                                 </div>
                             </div>
                         </div>
