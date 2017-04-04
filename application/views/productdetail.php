@@ -12,55 +12,11 @@
 
 <body>
 <!-- bar -->
-<div class="container-fluid">
     <?php include "navbar.php" ?>
-</div>
 
-<div class="container-fluid">
     <div class="row">
-        <div class="col-md-2">
-            <div id="sidebar" class="sidebar  responsive" data-sidebar="true" data-sidebar-scroll="true"
-                 data-sidebar-hover="true">
-
-
-                <ul class="nav nav-list">
-                    <li class="active">
-                        <a href="index.html">
-                            <i class="menu-icon fa fa-tachometer"></i>
-                            <span class="menu-text"> .................. </span>
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
-
-                    <li class="">
-                        <a href="#" class="dropdown-toggle">
-                            <i class="menu-icon fa fa-desktop"></i>
-                            <span class="menu-text">
-								..................
-							</span>
-
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
-
-
-                    <li class="">
-                        <a href="gallery.html">
-                            <i class="menu-icon fa fa-picture-o"></i>
-                            <span class="menu-text"> .................. </span>
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
-
-
-                </ul><!-- /.nav-list -->
-
-            </div>
-        </div>
-        <div class="col-md-9">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
             <br>
             <div class="thumbnail">
                 <div class="row">
@@ -97,10 +53,7 @@
             </div>
         </div>
     </div>
-</div>
-<div class="container-fluid">
     <!-- footer -->
     <?php include "footer.php" ?>
-</div>
 </body>
 </html>
