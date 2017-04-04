@@ -33,36 +33,90 @@ class DonateController extends CI_Controller
         );
         $this->load->library('upload', $config);
 
-        $width = (string)$this->input->post("width");
-        $long = (string)$this->input->post("long");
-        $unit_size = $this->input->post("unit_size");
-        $product_weight = $width . "x" . $long . " " . $unit_size;
-
-        $weight = (string)$this->input->post("weight");
-        $unit_weight = $this->input->post("unit_weight");
-        $product_size = $weight . " " . $unit_weight;
-
         $product_name = $this->input->post("product_name");
-        $product_number = $this->input->post("product_number");
         $product_color = $this->input->post("product_color");
+        $product_number = $this->input->post("product_number");
+
+        $weight_number = (string)$this->input->post("weight_number");
+        $weight_type = $this->input->post("weight_type");
+
+        $size_width = (string)$this->input->post("size_width");
+        $size_long = (string)$this->input->post("size_long");
+        $size_type = $this->input->post("size_type");
+
         $product_detail = $this->input->post("product_detail");
+        $product_type = $this->input->post("product_type");
         $user_id = 1;
+
         if ($this->upload->do_upload('product_image')) {
             $img_path = $img_name . $this->upload->data('file_ext');
-            $this->DonorModel->add_product($product_weight, $product_size, $product_name, $product_number, $product_color, $product_detail,$user_id, $img_path);
-
-            $this->load->view("donation/show_product");
+            $insert_id = $this->DonorModel->add_product($product_name, $product_color, $product_number, $weight_number, $weight_type, $size_width, $size_long, $size_type, $product_detail,  $product_type, $user_id, $img_path);
+            log_message('debug',print_r("insert id : ".$insert_id,TRUE));
+            $this->show_last_donate($insert_id);
         } else {
             echo $this->upload->display_errors();
         }
     }
 
-    public function show_last_donate()
+    public function show_last_donate($insert_id)
     {
-        $result = $this->DonorModel->show_last_query();
-        $data['result'] = $result->result_array();
+        $data['rs'] = $this->DonorModel->show_last_query($insert_id);
+        $this->
         $this->load->view('donation/show_product', $data);
     }
 
+    /**
+     * @return object
+     */
+    public function show_edit($insert_id)
+    {
+        $data['rs'] = $this->DonorModel->show_last_query($insert_id);
+        $this->load->view('donation/donor_edit', $data);
+    }
 
+    /**
+     * @return object
+     */
+    public function do_edit()
+    {
+        $img_name = time() . rand();
+        $config = array(
+            'upload_path' => 'uploads/donateImages',
+            'allowed_types' => 'gif|jpg|png',
+            'max_size' => '20000',
+            'max_width' => '20000',
+            'max_height' => '20000',
+            'file_name' => $img_name
+        );
+        $this->load->library('upload', $config);
+
+        $product_id = $this->input->post("product_id");
+        $product_name = $this->input->post("product_name");
+        $product_color = $this->input->post("product_color");
+        $product_number = $this->input->post("product_number");
+
+        $weight_number = (string)$this->input->post("weight_number");
+        $weight_type = $this->input->post("weight_type");
+
+        $size_width = (string)$this->input->post("size_width");
+        $size_long = (string)$this->input->post("size_long");
+        $size_type = $this->input->post("size_type");
+
+        $product_detail = $this->input->post("product_detail");
+        $product_type = $this->input->post("product_type");
+        $user_id = 1;
+
+        $check_img = $this->input->post('product_image');
+        if($check_img == null){
+
+        }
+        if ($this->upload->do_upload('product_image')) {
+            $img_path = $img_name . $this->upload->data('file_ext');
+            $insert_id = $this->DonorModel->edit_product($product_id, $product_name, $product_color, $product_number, $weight_number, $weight_type, $size_width, $size_long, $size_type, $product_detail,  $product_type, $user_id, $img_path);
+
+            $this->show_last_donate($insert_id);
+        } else {
+            echo $this->upload->display_errors();
+        }
+    }
 }

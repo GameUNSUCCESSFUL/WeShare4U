@@ -44,55 +44,59 @@
                                     <tbody>
                                     <tr class="active">
                                         <td><h4>ชื่อของที่บริจาค :</h4></td>
-                                        <td><input type="text" class="form-control" name="product_name"
-                                                   placeholder="ชื่อของบริจาค" required></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr class="active">
-                                        <td><h4>ขนาด :</h4></td>
-                                        <td><input type="number" name="width" class="form-control" placeholder="กว้าง"
-                                                   OnKeyPress="return chkNumber(this)" required></td>
-
-                                        <td></td>
-                                    </tr>
-                                    <tr class="active">
-                                        <td colspan="" rowspan="" headers=""></td>
-                                        <td><input type="number" name="long" class="form-control" placeholder="ยาว"
-                                                   OnKeyPress="return chkNumber(this)" required></td>
-                                        <td><select class="form-control" name="unit_size">
-                                                <option value="Centimeters" selected>เซนติเมตร</option>
-                                                <option value="meters">เมตร</option>
-                                            </select></td>
-                                    </tr>
-                                    <tr class="active">
-                                        <td><h4>น้ำหนัก :</h4></td>
-                                        <td><input type="number" class="form-control" name="weight"
-                                                   OnKeyPress="return chkNumber(this)" placeholder="20" required></td>
-                                     <td><select class="form-control" name="unit_weight">
-                                                <option value="grams" selected>กรัม</option>
-                                                <option value="kilograms">กิโลกรัม</option>
-                                            </select></td>
-                                    </tr>
-                                    <tr class="active">
-                                        <td><h4>จำนวน :</h4></td>
-                                        <td><input type="number" class="form-control" name="product_number" placeholder="6" required>
-                                        </td>
+                                        <td><input type="text" class="form-control" id="product_name" name="product_name"
+                                                   placeholder="ชื่อของบริจาค"></td>
                                         <td></td>
                                     </tr>
                                     <tr class="active">
                                         <td><h4>สี :</h4></td>
-                                        <td><input type="text" class="form-control" name="product_color" placeholder="แดง" required></td>
+                                        <td><input type="text" class="form-control" id="product_color" name="product_color" placeholder="แดง"></td>
+                                        <td></td>
+                                    </tr>
+
+                                    <tr class="active">
+                                        <td><h4>จำนวน :</h4></td>
+                                        <td><input type="number" class="form-control" id="product_number" name="product_number" placeholder="6">
+                                        </td>
+                                        <td>ชิ้น</td>
+                                    </tr>
+
+                                    <tr class="active">
+                                        <td><h4>น้ำหนัก :</h4></td>
+                                        <td><input type="number" class="form-control" id="weight_number" name="weight_number"
+                                                   OnKeyPress="return chkNumber(this)" placeholder="20" required></td>
+                                        <td><select class="form-control" id="weight_type" name="weight_type">
+                                                <option value="grams" selected>กรัม</option>
+                                                <option value="kilograms">กิโลกรัม</option>
+                                            </select></td>
+                                    </tr>
+
+                                    <tr class="active">
+                                        <td><h4>ขนาด :</h4></td>
+                                        <td><input type="number" id="size_width" name="size_width" class="form-control" placeholder="กว้าง"
+                                                   OnKeyPress="return chkNumber(this)" required></td>
                                         <td></td>
                                     </tr>
                                     <tr class="active">
+                                        <td colspan="" rowspan="" headers=""></td>
+                                        <td><input type="number" id="size_long" name="size_long" class="form-control" placeholder="ยาว"
+                                                   OnKeyPress="return chkNumber(this)" required></td>
+                                        <td>
+                                            <select class="form-control" id="size_type" name="size_type">
+                                                <option value="Centimeters" selected>เซนติเมตร</option>
+                                                <option value="meters">เมตร</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="active">
                                         <td><h4>รายละเอียด :</h4></td>
-                                        <td><textarea type="text" class="form-control" placeholder="รายละเอียดเพิ่มเติม" name="product_detail"
-                                                      required></textarea></td>
+                                        <td><textarea type="text" class="form-control" placeholder="รายละเอียดเพิ่มเติม" id="product_detail" name="product_detail" ></textarea></td>
                                         <td></td>
                                     </tr>
                                     <tr class="active">
                                         <td><h4>ประเภทของเล่น :</h4></td>
-                                        <td><select class="form-control" name="unit_weight">
+                                        <td><select class="form-control" name="product_type">
                                                 <option value="open" selected>ของเล่นปลายเปิด</option>
                                                 <option value="objective">ของเล่นตามจุดประสงค์</option>
                                                 <option value="role">ของเล่นส่งเสริมบทบาทสมมุติ</option>

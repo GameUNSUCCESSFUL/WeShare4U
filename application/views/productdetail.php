@@ -77,8 +77,8 @@
                             <div class="row">
                                 <br>
                                 <h2>ชื่อของบริจาค : <?php echo $product_name ?></h2>
-                                <h5><p>ขนาด : <?php echo $product_size ?></p>
-                                <p>น้ำหนัก : <?php echo $product_weight ?></p>
+                                <h5><p>ขนาด : <?php echo $size_width." x ".$size_long ?></p>
+                                <p>น้ำหนัก : <?php echo $weight_number ?></p>
                                 <p>จำนวน : <?php echo $product_number ?></p>
                                 <p>รายละเเอียด : <?php echo $product_detail ?></p></h5>
                             </div>
