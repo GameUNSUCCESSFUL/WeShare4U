@@ -25,7 +25,7 @@ class ReceiverController extends CI_Controller
 
         $this->pagination->initialize($config);
 
-        $data['dbcon'] = $this->db->select('product_name')->from('tb_donation_products')->limit($config['per_page'], $this->uri->segment(3))->get()->result_array();
+        $data['dbcon'] = $this->db->select('*')->from('tb_donation_products')->limit($config['per_page'], $this->uri->segment(3))->get()->result_array();
         $data['links'] = $this->pagination->create_links();
 
         $this->load->view('receiverView', $data);
@@ -38,15 +38,15 @@ class ReceiverController extends CI_Controller
         if(isset($searchitem) && !empty($searchitem)){
 
             if($searchselect == 'selectname'){
-                $query = $this->db->query('SELECT product_name FROM tb_donation_products WHERE product_name LIKE "%'.$searchitem.'%"');
+                $query = $this->db->query('SELECT * FROM tb_donation_products WHERE product_name LIKE "%'.$searchitem.'%"');
                 $data['dbcon'] = $query->result_array();
                 $data['links'] = '';
             }else if($searchselect == 'selecttype'){
-                $query = $this->db->query('SELECT product_name FROM tb_donation_products WHERE product_type LIKE "%'.$searchitem.'%"');
+                $query = $this->db->query('SELECT * FROM tb_donation_products WHERE product_type LIKE "%'.$searchitem.'%"');
                 $data['dbcon'] = $query->result_array();
                 $data['links'] = '';
             }else{
-                $query = $this->db->query('SELECT product_name FROM tb_donation_products WHERE product_name LIKE "%'.$searchitem.'%" OR product_type LIKE "%'.$searchitem.'%" OR product_detail LIKE "%'.$searchitem.'%"');
+                $query = $this->db->query('SELECT * FROM tb_donation_products WHERE product_name LIKE "%'.$searchitem.'%" OR product_type LIKE "%'.$searchitem.'%" OR product_detail LIKE "%'.$searchitem.'%"');
                 $data['dbcon'] = $query->result_array();
                 $data['links'] = '';
             }
@@ -56,4 +56,6 @@ class ReceiverController extends CI_Controller
             redirect('ReceiverController');
         }
     }
+
+
 }
