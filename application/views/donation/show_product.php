@@ -40,6 +40,8 @@
                                 <br><br><br>
 
                                 <?php foreach ($rs->result_array() as $row): ?>
+                                    <?php $_SESSION['img_path'] = $row['img_path'];
+                                          $_SESSION['product_id'] = $row['product_id'];?>
 
                                 <h3><?php echo $row['product_id']; ?></h3>
                                 <h3><?php echo $row['product_name']; ?></h3>
@@ -57,8 +59,8 @@
                                 <button type="submit" id="bt" name="but_donate" class="btn btn-warning" onclick="location.href='<?php echo site_url('DonateController/show_edit/'.$row['product_id']);?>'" >
                                     แก้ไข
                                 </button>
-                                <button type="submit" id="bt" name="but_donate" class="btn btn-primary ">
-                                    บริจาคเพิ่มเติม
+                                <button type="submit" id="bt" name="but_donate" class="btn btn-primary" onclick="location.href='<?php echo site_url('DonateController/add');?>'" >
+                                    บริจาคเพิ่ม
                                 </button>
                             </div>
                             <!--/.Main column-->
