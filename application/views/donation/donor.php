@@ -104,7 +104,7 @@
                                     </tr>
                                     <tr class="active">
                                         <td><h4>เลือกรูป :</h4></td>
-                                        <td><input type="file" class="form-control" name="product_image" size="30" onchange='openFile()' multiple></td>
+                                        <td><input type="file" class="form-control"  id="product_image" name="product_image" size="30" onchange='openFile()' multiple></td>
                                         <td></td>
                                     </tr>
                                     <tr class="active">
@@ -124,9 +124,7 @@
                                         <td>
                                             <input type="reset" name="reset" class="btn btn-danger"
                                                    value="เคลียร์">
-                                            <button type="submit" id="bt" name="but_donate" class="btn btn-primary ">
-                                                บริจาค
-                                            </button>
+                                            <input type="submit" name="but_donate" id="bt"  class="btn btn-primary" value="บริจาค" />
                                         </td>
                                         <td></td>
                                     </tr>
@@ -144,25 +142,46 @@
         </ul>
     </div>
 </div>
-<script>
-    $(document).ready(function(){
-        $("#bt").click(function(){
-            var product_name = $("input[name=product_name]").val();
-            var product_color = $("input[name=product_color]").val();
-            var product_number = $("input[name=product_number]").val();
-            var weight_number = $("input[name=weight_number]").val();
-            var weight_type = $("select[name=weight_type]").val();
-            var size_width = $("select[name=size_width]").val();
-            var size_long = $("input[name=size_long]").val();
-            var size_type = $("textarea[name=size_type]").val();
-            var product_detail = $("input[name=product_detail]").val();
-            var product_type = $("input[name=product_type]").val();
-            var product_image = $("input[name=product_image]").val();
-            if(product_name == ""|| width == "" || long == "" || unit_size == "" || unit_weight == "" || product_number == "" || product_color == "" || product_detail == "" || product_image== "" || weight == "" || $_FILES[product_image]['size'] == 0){
-                $("#result").text("Please enter a value with a valid extension");
-            }
+<script type="text/javascript">
+
+        $(document).ready(function() {
+            $('#bt').bind("click",function()
+            {
+                var product_name = $('#product_name').val();
+                var product_color = $('#product_color').val();
+                var product_number = $('#product_number').val();
+                var weight_number = $('#weight_number').val();
+                var size_width = $('#size_width').val();
+                var size_long = $('#size_long').val();
+                var product_detail = $('#product_detail').val();
+                var product_type = $('#product_type').val();
+                var product_image = $('#product_image').val();
+                if(product_image =='' || product_name =='' || product_color == '' || product_number =='' || weight_number =='' || size_width =='' || size_long == '' || product_detail == '' || product_type ==''){
+                    $("#result").text("Please enter a value with a valid extension");
+                    return false;
+                }
+            });
         });
-    });
+
+//$(document).ready(function(){
+//        $("#bt").click(function(){
+
+//            var product_image = $('#product_image').val();
+//            var product_name = $("input[name=product_name]").val();
+//            var product_color = $("input[name=product_color]").val();
+//            var product_number = $("input[name=product_number]").val();
+//            var weight_number = $("input[name=weight_number]").val();
+//            var size_width = $("select[name=size_width]").val();
+//            var size_long = $("input[name=size_long]").val();
+//            var product_detail = $("input[name=product_detail]").val();
+//            var product_type = $("input[name=product_type]").val();
+//            if(product_image =='' ){
+//                $("#result").text("Please enter a value with a valid extension");
+//                return false;
+//            }
+//
+//        });
+//    });
 </script>
 <!-- footer -->
 <?php $this->load->view('includecss'); ?>
