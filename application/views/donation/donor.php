@@ -63,8 +63,7 @@
 
                                     <tr class="active">
                                         <td><h4>น้ำหนัก :</h4></td>
-                                        <td><input type="number" class="form-control" id="weight_number" name="weight_number"
-                                                   OnKeyPress="return chkNumber(this)" placeholder="20" required></td>
+                                        <td><input type="number" class="form-control" id="weight_number" name="weight_number" placeholder="20"></td>
                                         <td><select class="form-control" id="weight_type" name="weight_type">
                                                 <option value="grams" selected>กรัม</option>
                                                 <option value="kilograms">กิโลกรัม</option>
@@ -73,14 +72,12 @@
 
                                     <tr class="active">
                                         <td><h4>ขนาด :</h4></td>
-                                        <td><input type="number" id="size_width" name="size_width" class="form-control" placeholder="กว้าง"
-                                                   OnKeyPress="return chkNumber(this)" required></td>
+                                        <td><input type="number" id="size_width" name="size_width" class="form-control" placeholder="กว้าง" ></td>
                                         <td></td>
                                     </tr>
                                     <tr class="active">
                                         <td colspan="" rowspan="" headers=""></td>
-                                        <td><input type="number" id="size_long" name="size_long" class="form-control" placeholder="ยาว"
-                                                   OnKeyPress="return chkNumber(this)" required></td>
+                                        <td><input type="number" id="size_long" name="size_long" class="form-control" placeholder="ยาว" ></td>
                                         <td>
                                             <select class="form-control" id="size_type" name="size_type">
                                                 <option value="Centimeters" selected>เซนติเมตร</option>
@@ -107,8 +104,7 @@
                                     </tr>
                                     <tr class="active">
                                         <td><h4>เลือกรูป :</h4></td>
-                                        <td><input type="file" class="form-control" name="product_image" size="30" onchange='openFile()' multiple
-                                                   required></td>
+                                        <td><input type="file" class="form-control" name="product_image" size="30" onchange='openFile()' multiple></td>
                                         <td></td>
                                     </tr>
                                     <tr class="active">
@@ -119,11 +115,19 @@
                                     <tr class="active">
                                         <td></td>
                                         <td>
+                                            ::<span id="result" style="color:red"></span>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="active">
+                                        <td></td>
+                                        <td>
+                                            <input type="reset" name="reset" class="btn btn-danger"
+                                                   value="เคลียร์">
                                             <button type="submit" id="bt" name="but_donate" class="btn btn-primary ">
                                                 บริจาค
                                             </button>
-                                            <input type="reset" name="reset" class="btn btn-danger"
-                                                   value="Clear"><span id="result" style="color:red"></span></td>
+                                        </td>
                                         <td></td>
                                     </tr>
                                     </tbody>
@@ -140,7 +144,26 @@
         </ul>
     </div>
 </div>
-
+<script>
+    $(document).ready(function(){
+        $("#bt").click(function(){
+            var product_name = $("input[name=product_name]").val();
+            var product_color = $("input[name=product_color]").val();
+            var product_number = $("input[name=product_number]").val();
+            var weight_number = $("input[name=weight_number]").val();
+            var weight_type = $("select[name=weight_type]").val();
+            var size_width = $("select[name=size_width]").val();
+            var size_long = $("input[name=size_long]").val();
+            var size_type = $("textarea[name=size_type]").val();
+            var product_detail = $("input[name=product_detail]").val();
+            var product_type = $("input[name=product_type]").val();
+            var product_image = $("input[name=product_image]").val();
+            if(product_name == ""|| width == "" || long == "" || unit_size == "" || unit_weight == "" || product_number == "" || product_color == "" || product_detail == "" || product_image== "" || weight == "" || $_FILES[product_image]['size'] == 0){
+                $("#result").text("Please enter a value with a valid extension");
+            }
+        });
+    });
+</script>
 <!-- footer -->
 <?php $this->load->view('includecss'); ?>
 </body>
