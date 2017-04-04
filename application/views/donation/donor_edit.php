@@ -58,10 +58,10 @@
                         <td><input type="number" class="form-control" id="weight_number" name="weight_number"
                                    placeholder="20" value="<?php echo $row['weight_number'] ?>"></td>
                         <td><select class="form-control" id="weight_type" name="weight_type">
-                                <option value="grams" <?php if ($row['weight_type'] === 'grams') echo ' selected="selected"' ?>>
+                                <option value="กรัม" <?php if ($row['weight_type'] === 'กรัม') echo ' selected="selected"' ?>>
                                     กรัม
                                 </option>
-                                <option value="kilograms" <?php if ($row['weight_type'] === 'kilograms') echo ' selected="selected"' ?>>
+                                <option value="กิโลกรัม" <?php if ($row['weight_type'] === 'กิโลกรัม') echo ' selected="selected"' ?>>
                                     กิโลกรัม
                                 </option>
                             </select></td>
@@ -79,10 +79,10 @@
                                    placeholder="ยาว" value="<?php echo $row['size_long'] ?>"></td>
                         <td>
                             <select class="form-control" id="size_type" name="size_type">
-                                <option value="Centimeters" <?php if ($row['size_type'] === 'Centimeters') echo ' selected="selected"' ?> >
+                                <option value="เซนติเมตร" <?php if ($row['size_type'] === 'เซนติเมตร') echo ' selected="selected"' ?> >
                                     เซนติเมตร
                                 </option>
-                                <option value="meters" <?php if ($row['size_type'] === 'meters') echo ' selected="selected"' ?> >
+                                <option value="เมตร" <?php if ($row['size_type'] === 'เมตร') echo ' selected="selected"' ?> >
                                     เมตร
                                 </option>
                             </select>
@@ -100,18 +100,18 @@
                         <td><h4>ประเภทของเล่น :</h4></td>
                         <td>
                             <select class="form-control" name="product_type">
-                                    <option value="toy_car" <?php if ($row['product_type'] === 'toy_car') echo ' selected="selected"' ?> >รถของเล่น</option>
-                                    <option value="doll" <?php if ($row['product_type'] === 'doll') echo ' selected="selected"' ?> >ตุ๊กตา</option>
-                                    <option value="musical" <?php if ($row['product_type'] === 'musical') echo ' selected="selected"' ?> >เครื่องดนตรีของเล่น</option>
-                                    <option value="lego" <?php if ($row['product_type'] === 'lego') echo ' selected="selected"' ?> >ตัวต่อเลโก้</option>
-                                    <option value="robot" <?php if ($row['product_type'] === 'robot') echo ' selected="selected"' ?> >หุ่นยนต์</option>
-                                    <option value="puzzle" <?php if ($row['product_type'] === 'puzzle') echo ' selected="selected"' ?> >เกมปริศนา</option>
-                                    <option value="ball" <?php if ($row['product_type'] === 'ball') echo ' selected="selected"' ?> >ลูกบอล</option>
-                                    <option value="music" <?php if ($row['product_type'] === 'music') echo ' selected="selected"' ?> >ของเล่นที่มีเสียงดนตรี</option>
-                                    <option value="tug" <?php if ($row['product_type'] === 'tug') echo ' selected="selected"' ?> >ของเล่นลากจูง</option>
-                                    <option value="shake" <?php if ($row['product_type'] === 'opeshaken') echo ' selected="selected"' ?> >ของเล่นเขย่า</option>
-                                    <option value="wooden" <?php if ($row['product_type'] === 'wooden') echo ' selected="selected"' ?> >ของเล่นไม้</option>
-                                    <option value="kitchen" <?php if ($row['product_type'] === 'kitchen') echo ' selected="selected"' ?> >ของเล่นเครื่องครัว</option>
+                                    <option value="รถของเล่น" <?php if ($row['product_type'] === 'รถของเล่น') echo ' selected="selected"' ?> >รถของเล่น</option>
+                                    <option value="ตุ๊กตา" <?php if ($row['product_type'] === 'ตุ๊กตา') echo ' selected="selected"' ?> >ตุ๊กตา</option>
+                                    <option value="เครื่องดนตรีของเล่น" <?php if ($row['product_type'] === 'เครื่องดนตรีของเล่น') echo ' selected="selected"' ?> >เครื่องดนตรีของเล่น</option>
+                                    <option value="ตัวต่อเลโก้" <?php if ($row['product_type'] === 'ตัวต่อเลโก้') echo ' selected="selected"' ?> >ตัวต่อเลโก้</option>
+                                    <option value="หุ่นยนต์" <?php if ($row['product_type'] === 'หุ่นยนต์') echo ' selected="selected"' ?> >หุ่นยนต์</option>
+                                    <option value="เกมปริศนา" <?php if ($row['product_type'] === 'เกมปริศนา') echo ' selected="selected"' ?> >เกมปริศนา</option>
+                                    <option value="ลูกบอล" <?php if ($row['product_type'] === 'ลูกบอล') echo ' selected="selected"' ?> >ลูกบอล</option>
+                                    <option value="ของเล่นที่มีเสียงดนตรี" <?php if ($row['product_type'] === 'ของเล่นที่มีเสียงดนตรี') echo ' selected="selected"' ?> >ของเล่นที่มีเสียงดนตรี</option>
+                                    <option value="ของเล่นลากจูง" <?php if ($row['product_type'] === 'ของเล่นลากจูง') echo ' selected="selected"' ?> >ของเล่นลากจูง</option>
+                                    <option value="ของเล่นเขย่า" <?php if ($row['product_type'] === 'ของเล่นเขย่า') echo ' selected="selected"' ?> >ของเล่นเขย่า</option>
+                                    <option value="ของเล่นไม้" <?php if ($row['product_type'] === 'ของเล่นไม้') echo ' selected="selected"' ?> >ของเล่นไม้</option>
+                                    <option value="ของเล่นเครื่องครัว" <?php if ($row['product_type'] === 'ของเล่นเครื่องครัว') echo ' selected="selected"' ?> >ของเล่นเครื่องครัว</option>
                             </select>
                         </td>
                         <td></td>

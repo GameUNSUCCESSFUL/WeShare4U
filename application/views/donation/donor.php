@@ -59,8 +59,8 @@
                                         <td><h4>น้ำหนัก :</h4></td>
                                         <td><input type="number" class="form-control" id="weight_number" name="weight_number" placeholder="20"></td>
                                         <td><select class="form-control" id="weight_type" name="weight_type">
-                                                <option value="grams" selected>กรัม</option>
-                                                <option value="kilograms">กิโลกรัม</option>
+                                                <option value="กรัม" selected>กรัม</option>
+                                                <option value="กิโลกรัม">กิโลกรัม</option>
                                             </select></td>
                                     </tr>
 
@@ -74,8 +74,8 @@
                                         <td><input type="number" id="size_long" name="size_long" class="form-control" placeholder="ยาว" ></td>
                                         <td>
                                             <select class="form-control" id="size_type" name="size_type">
-                                                <option value="Centimeters" selected>เซนติเมตร</option>
-                                                <option value="meters">เมตร</option>
+                                                <option value="เซนติเมตร" selected>เซนติเมตร</option>
+                                                <option value="เมตร">เมตร</option>
                                             </select>
                                         </td>
                                     </tr>
@@ -89,18 +89,18 @@
                                         <td><h4>ประเภทของเล่น :</h4></td>
                                         <td>
                                             <select class="form-control" name="product_type">
-                                                <option value="toy_car" selected>รถของเล่น</option>
-                                                <option value="doll">ตุ๊กตา</option>
-                                                <option value="musical">เครื่องดนตรีของเล่น</option>
-                                                <option value="lego">ตัวต่อเลโก้</option>
-                                                <option value="robot">หุ่นยนต์</option>
-                                                <option value="puzzle">เกมปริศนา</option>
-                                                <option value="ball">ลูกบอล</option>
-                                                <option value="music">ของเล่นที่มีเสียงดนตรี</option>
-                                                <option value="tug">ของเล่นลากจูง</option>
-                                                <option value="shake">ของเล่นเขย่า</option>
-                                                <option value="wooden">ของเล่นไม้</option>
-                                                <option value="kitchen">ของเล่นเครื่องครัว</option>
+                                                <option value="รถของเล่น" selected>รถของเล่น</option>
+                                                <option value="ตุ๊กตา">ตุ๊กตา</option>
+                                                <option value="เครื่องดนตรีของเล่น">เครื่องดนตรีของเล่น</option>
+                                                <option value="ตัวต่อเลโก้">ตัวต่อเลโก้</option>
+                                                <option value="หุ่นยนต์">หุ่นยนต์</option>
+                                                <option value="เกมปริศนา">เกมปริศนา</option>
+                                                <option value="ลูกบอล">ลูกบอล</option>
+                                                <option value="ของเล่นที่มีเสียงดนตรี">ของเล่นที่มีเสียงดนตรี</option>
+                                                <option value="ของเล่นลากจูง">ของเล่นลากจูง</option>
+                                                <option value="ของเล่นเขย่า">ของเล่นเขย่า</option>
+                                                <option value="ของเล่นไม้">ของเล่นไม้</option>
+                                                <option value="ของเล่นเครื่องครัว">ของเล่นเครื่องครัว</option>
                                             </select>
                                         </td>
                                         <td></td>
