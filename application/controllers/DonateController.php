@@ -61,7 +61,6 @@ class DonateController extends CI_Controller
     public function show_last_donate($insert_id)
     {
         $data['rs'] = $this->DonorModel->show_last_query($insert_id);
-        $this->
         $this->load->view('donation/show_product', $data);
     }
 
@@ -106,17 +105,22 @@ class DonateController extends CI_Controller
         $product_type = $this->input->post("product_type");
         $user_id = 1;
 
-        $check_img = $this->input->post('product_image');
-        if($check_img == null){
+        if ($_FILES['product_image']['size'] == 0)
+        {
+                $img_path = $_SESSION['img_path'];
 
-        }
-        if ($this->upload->do_upload('product_image')) {
-            $img_path = $img_name . $this->upload->data('file_ext');
-            $insert_id = $this->DonorModel->edit_product($product_id, $product_name, $product_color, $product_number, $weight_number, $weight_type, $size_width, $size_long, $size_type, $product_detail,  $product_type, $user_id, $img_path);
+                $this->DonorModel->edit_product($product_id, $product_name, $product_color, $product_number, $weight_number, $weight_type, $size_width, $size_long, $size_type, $product_detail,  $product_type, $user_id, $img_path);
 
-            $this->show_last_donate($insert_id);
-        } else {
-            echo $this->upload->display_errors();
+                $this->show_last_donate($product_id);
+        }else{
+            if ($this->upload->do_upload('product_image')) {
+                $img_path = $img_name . $this->upload->data('file_ext');
+                $this->DonorModel->edit_product($product_id, $product_name, $product_color, $product_number, $weight_number, $weight_type, $size_width, $size_long, $size_type, $product_detail,  $product_type, $user_id, $img_path);
+                $this->show_last_donate($product_id);
+            } else {
+                echo $this->upload->display_errors();
+            }
         }
+
     }
 }

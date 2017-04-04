@@ -58,7 +58,7 @@ class DonorModel extends CI_Model
         );
         $this->db->where('product_id', $product_id);
         $this->db->update('tb_donation_products', $data);
-        $insert_id = $this->db->insert_id();
-        return $insert_id;
+        $check = $this->db;
+        return $check;
     }
 }

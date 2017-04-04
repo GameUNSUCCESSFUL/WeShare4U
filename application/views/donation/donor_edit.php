@@ -107,7 +107,7 @@
                                         </tr>
                                         <tr class="active">
                                             <td><h4>เลือกรูป :</h4></td>
-                                            <td><input type="file" value="<?php echo base_url('uploads/donateImages/').$row['img_path']; ?>" class="form-control" name="product_image" size="30"
+                                            <td><input type="file" class="form-control" name="product_image" size="30"
                                                        onchange='openFile()'  multiple></td>
                                             <td></td>
                                         </tr>
