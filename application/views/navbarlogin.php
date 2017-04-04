@@ -5,34 +5,37 @@
     </script>
 
     <div class="navbar-container" id="navbar-container">
-        <!-- #section:basics/sidebar.mobile.toggle -->
-        <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
-        </button>
-
         <!-- /section:basics/sidebar.mobile.toggle -->
         <div class="navbar-header pull-left">
             <!-- #section:basics/navbar.layout.brand -->
             <a href="#" class="navbar-brand">
                 <small>
                     <i class="fa fa-leaf"></i>
-                    <div>KU TOY</div>
+                    <div>WeShared4U</div>
                 </small>
             </a>
 
         </div>
-
         <!-- #section:basics/navbar.dropdown -->
-        <div class="navbar-buttons navbar-header pull-right" role="navigation">
-            <ul class="nav ace-nav">
-                <button type="button" name="but-login" class="btn btn-info" data-toggle="modal"
-                        data-target=".bs-example-modal-lg">Login
-                </button>
-                <button type="button" class="btn btn-success" onclick="location.href='<?php echo base_url();?>register'">
-                    Register
-                </button>
+        <div class="collapse navbar-collapse pull-right" role="navigation">
+            <ul>
+                <li class="padding">
+                    <button type="button" name="but-login" class="btn padding" data-toggle="modal"
+                            data-target=".bs-example-modal-lg">เข้าสู่ระบบ</button>
+                    <div align="center"><a href="#" class="padding">สมัครสมาชิก</a></div>
+                </li>
             </ul>
         </div>
 
-        <!-- /section:basics/navbar.dropdown -->
-    </div><!-- /.navbar-container -->
+        <div class="collapse navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+                <li><a href="#">หน้าหลัก</a></li>
+                <li><a href="#">สถิติการบริจาค</a></li>
+                <li><a href="#">คำถามที่พบบ่อย</a></li>
+                <li><a href="#">เกี่ยวกับเรา</a></li>
+
+            </ul>
+        </div >
+
+    </div>
 </div>
