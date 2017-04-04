@@ -33,10 +33,24 @@ class ReceiverController extends CI_Controller
 
     public function search_item(){
         $searchitem = $this->input->post('keyword');
-        //$this->input->post('searchselect');
+        $searchselect = $this->input->post('searchselect');
 
         if(isset($searchitem) && !empty($searchitem)){
-            $data['dbcon'] = $this->db->select('product_name')->from('tb_donation_products')->like('product_name', $searchitem)->get()->result_array();
+
+            if($searchselect == 'selectname'){
+                $query = $this->db->query('SELECT product_name FROM tb_donation_products WHERE product_name LIKE "%'.$searchitem.'%"');
+                $data['dbcon'] = $query->result_array();
+                $data['links'] = '';
+            }else if($searchselect == 'selecttype'){
+                $query = $this->db->query('SELECT product_name FROM tb_donation_products WHERE product_type LIKE "%'.$searchitem.'%"');
+                $data['dbcon'] = $query->result_array();
+                $data['links'] = '';
+            }else{
+                $query = $this->db->query('SELECT product_name FROM tb_donation_products WHERE product_name LIKE "%'.$searchitem.'%" OR product_type LIKE "%'.$searchitem.'%" OR product_detail LIKE "%'.$searchitem.'%"');
+                $data['dbcon'] = $query->result_array();
+                $data['links'] = '';
+            }
+
             $this->load->view('receiverView', $data);
         }else{
             redirect('ReceiverController');

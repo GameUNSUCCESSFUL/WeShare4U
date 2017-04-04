@@ -20,7 +20,7 @@
                 <input class="form-control" type="text" name="keyword" id="keyword" value="" placeholder="Search...">
                 <input class="btn btn-default" type="submit" name="filter" value="Go">
                 <br>
-                <input type="radio" name="searchselect" value="selectname">Name
+                <input type="radio" name="searchselect" value="selectname" checked>Name
                 <input type="radio" name="searchselect" value="selecttype">Type
                 <input type="radio" name="searchselect" value="selectkey">Keyword
             </form>
