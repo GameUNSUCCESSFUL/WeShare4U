@@ -8,13 +8,9 @@
     <?php include "includecss.php" ?>
 </head>
 <body>
-<<<<<<< HEAD
 <?php include "navbarlogin.php" ?>
-<h1 align="center">Show Data</h1>
-=======
-<?php include "navbar.php" ?>
+
 <h1 align="center">Donation List</h1>
->>>>>>> origin/Ju
 
 <div class="container">
     <div class="featured-block">
@@ -33,7 +29,7 @@
         </div>
 
         <div class="row">
-            <?php foreach ($dbquery as $r): ?>
+            <?php $x = 0; foreach ($dbquery as $r): ?>
                 <div class="col-md-3">
                     <div class="block">
                         <div class="thumbnail">
@@ -42,14 +38,11 @@
 
                             <div class="caption">
                                 <h1 align="center"> <?php echo $r['product_name'] ?> </h1>
+                                <h4> <?php echo $r['product_type'] ?></h4>
                                 <div align="right">
-<<<<<<< HEAD
-                                    <a style="color: #0000FF" href="<?php echo base_url('index.php/productDetailController?id='.$r['product_id'])?>">รายละเอียดเพิ่มเติม...</a>
-=======
-                                    <a class="btn"
-                                       href="<?php echo base_url('productDetailController?id=' . $r['product_id']) ?>">see
-                                        more</a>
->>>>>>> origin/Ju
+
+                                    <a style="color: #0000FF" id="<?php echo $x = $x+1;?>" href="<?php echo base_url('index.php/productDetailController?id='.$r['product_id'])?>">รายละเอียดเพิ่มเติม...</a>
+
                                 </div>
                             </div>
                         </div>

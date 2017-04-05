@@ -11,16 +11,16 @@
                 <div class="col-md-8">
                     <div align="center"><h2>Sign in</h2></div>
                     <div class="form-group">
-                        <label>E-mail</label>
+                        <label>อีเมล์</label>
                         <input type="text" class="form-control" placeholder="E-mail" id="email"
                                name="email">
                     </div>
                     <div class="form-group">
-                        <label>Password</label>
+                        <label>รหัสผ่าน</label>
                         <input type="password" class="form-control" placeholder="Password" id="password"
                                name="password">
                     </div>
-                    <a href=#>Forget Password ? </a>|<br><br>
+                    <a href="<?php echo base_url('index.php/UserController/forget_password');?>" style="color: #0f0f0f">ลืมรหัสผ่าน? </a>|<br><br>
 
 <!--                    <div align="center" id="recaptcha" class="g-recaptcha"-->
 <!--                         data-sitekey="6LdM9RoUAAAAABEquyphv8VNH7W3l0aG92CKTYKc"></div>-->

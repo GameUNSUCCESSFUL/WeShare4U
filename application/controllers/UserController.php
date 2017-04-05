@@ -183,5 +183,13 @@ class UserController extends CI_Controller
 
     }
 
+    /**
+     * @return object
+     */
+    public function forget_password()
+    {
+        return $this->load->view('user/login/forgetpass');
+    }
+
 
 }

@@ -46,7 +46,7 @@
 
                         <div class="row">
                             <br><br><br><br><br><br><br>
-                            <button class="btn btn-success" onclick="location.href='<?php echo base_url('receive');?>'">รับบริจาค</button>
+                            <button class="btn btn-success" onclick="location.href='<?php echo base_url('index.php/receive');?>'">รับบริจาค</button>
                             <button class="btn btn-warning" onclick="location.href='<?php echo site_url('receiver');?>'" >ย้อนกลับ</button>
                         </div>
                     </div>
