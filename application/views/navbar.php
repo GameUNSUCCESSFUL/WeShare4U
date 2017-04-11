@@ -1,7 +1,10 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <div id="navbar" class="navbar navbar-default">
     <script type="text/javascript">
-        try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+        try {
+            ace.settings.check('navbar', 'fixed')
+        } catch (e) {
+        }
     </script>
 
     <div class="navbar-container" id="navbar-container">
@@ -18,11 +21,51 @@
         </div>
         <!-- #section:basics/navbar.dropdown -->
         <div class="collapse navbar-collapse pull-right" role="navigation">
-            <ul>
+            <ul class="nav navbar-nav none">
                 <li class="padding2">
                     <div align="right">
                         ยินดีต้อนรับ <a href="#">สุขพัฒน์ เทพารส</a><br>
                         <a href="#">ออกจากระบบ</a>
+                    </div>
+                </li>
+                <li class="">
+                    <div align="right">
+                        <div class="dropdown">
+                            <button class="btn btn-success dropdown-toggle " type="button" data-toggle="dropdown" id="btn_basket">
+                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                <span class="badge" id="basket">
+                                     <?php
+                                     if ($this->session->basket) {
+                                         $basrket = $this->session->basket;
+                                         echo count($basrket);
+                                     } else {
+                                         echo 0;
+                                     }
+                                     ?>
+                                 </span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" style="width: 350px">
+                                <div class="panel panel-default">
+                                    <table class="table" id="output">
+                                    </table>
+                                    <script>
+                                        $(document).ready(function (){
+                                            $("#btn_basket").click(function () {
+                                                $.ajax({
+                                                    url: "<?php echo base_url('BasketController/get_basket') ?>",
+                                                    dataType: "text",
+                                                    cache: false,
+                                                    success: function (data) {
+                                                        $("#output").html(data);
+                                                    }
+                                                });
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                                <div align="center"><a class="btn btn-success  btn-sm">ยืนยันการรับบริจาค</a></div>
+                            </ul>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -36,7 +79,7 @@
                 <li><a href="#">เกี่ยวกับเรา</a></li>
 
             </ul>
-        </div >
+        </div>
 
 
         <!-- #section:basics/navbar.dropdown -->
@@ -51,7 +94,7 @@
                     reguster
                 </li>
 
-                <button type="button" class="btn btn-success" onclick="location.href='<?php echo base_url();?>register'">
+                <button type="button" class="btn btn-success" onclick="location.href='<?php echo base_url(); ?>register'">
                     Register
                 </button>
             </ul>
