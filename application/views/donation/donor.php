@@ -11,7 +11,7 @@
 </head>
 <body class="bg">
 <!-- nav -->
-<?php $this->load->view('navbar'); ?>
+<?php $this->load->view('navbarlogin'); ?>
 
 <!--input-->
                 <div class="row">
@@ -39,61 +39,70 @@
                                     <tr class="active">
                                         <td><h4>ชื่อของที่บริจาค :</h4></td>
                                         <td><input type="text" class="form-control" id="product_name" name="product_name"
-                                                   placeholder="ชื่อของบริจาค"></td>
+                                                   placeholder="ชื่อของที่ท่านต้องการบริจาค: ตุ๊กตา"></td>
                                         <td></td>
                                     </tr>
                                     <tr class="active">
                                         <td><h4>สี :</h4></td>
-                                        <td><input type="text" class="form-control" id="product_color" name="product_color" placeholder="แดง"></td>
+                                        <td><input type="text" class="form-control" id="product_color" name="product_color" placeholder="สีของที่ท่านต้องการบริจาค: แดง"></td>
                                         <td></td>
                                     </tr>
 
                                     <tr class="active">
                                         <td><h4>จำนวน :</h4></td>
-                                        <td><input type="number" class="form-control" id="product_number" name="product_number" placeholder="6">
+                                        <td><input type="number" class="form-control" id="product_number" name="product_number" placeholder="จำนวนของที่ท่านต้องการบริจาค: 3">
                                         </td>
                                         <td>ชิ้น</td>
                                     </tr>
 
                                     <tr class="active">
                                         <td><h4>น้ำหนัก :</h4></td>
-                                        <td><input type="number" class="form-control" id="weight_number" name="weight_number" placeholder="20"></td>
+                                        <td><input type="number" class="form-control" id="weight_number" name="weight_number" placeholder="น้ำหนักของสิ่งที่ท่านต้องการบริจาค: 35"></td>
                                         <td><select class="form-control" id="weight_type" name="weight_type">
-                                                <option value="grams" selected>กรัม</option>
-                                                <option value="kilograms">กิโลกรัม</option>
+                                                <option value="กรัม" selected>กรัม</option>
+                                                <option value="กิโลกรัม">กิโลกรัม</option>
                                             </select></td>
                                     </tr>
 
                                     <tr class="active">
                                         <td><h4>ขนาด :</h4></td>
-                                        <td><input type="number" id="size_width" name="size_width" class="form-control" placeholder="กว้าง" ></td>
+                                        <td><input type="number" id="size_width" name="size_width" class="form-control" placeholder="ความกว้าง: 25" ></td>
                                         <td></td>
                                     </tr>
                                     <tr class="active">
                                         <td colspan="" rowspan="" headers=""></td>
-                                        <td><input type="number" id="size_long" name="size_long" class="form-control" placeholder="ยาว" ></td>
+                                        <td><input type="number" id="size_long" name="size_long" class="form-control" placeholder="ความยาว: 30" ></td>
                                         <td>
                                             <select class="form-control" id="size_type" name="size_type">
-                                                <option value="Centimeters" selected>เซนติเมตร</option>
-                                                <option value="meters">เมตร</option>
+                                                <option value="เซนติเมตร" selected>เซนติเมตร</option>
+                                                <option value="เมตร">เมตร</option>
                                             </select>
                                         </td>
                                     </tr>
 
                                     <tr class="active">
                                         <td><h4>รายละเอียด :</h4></td>
-                                        <td><textarea type="text" class="form-control" placeholder="รายละเอียดเพิ่มเติม" id="product_detail" name="product_detail" ></textarea></td>
+                                        <td><textarea type="text" class="form-control" placeholder="รายละเอียดของบริจาคเพิ่มเติม" id="product_detail" name="product_detail" ></textarea></td>
                                         <td></td>
                                     </tr>
                                     <tr class="active">
                                         <td><h4>ประเภทของเล่น :</h4></td>
-                                        <td><select class="form-control" name="product_type">
-                                                <option value="open" selected>ของเล่นปลายเปิด</option>
-                                                <option value="objective">ของเล่นตามจุดประสงค์</option>
-                                                <option value="role">ของเล่นส่งเสริมบทบาทสมมุติ</option>
-                                                <option value="skill">ของเล่นเสริมทักษะร่างกาย</option>
-                                                <option value="art">ของเล่นศิลปะ</option>
-                                            </select></td>
+                                        <td>
+                                            <select class="form-control" name="product_type">
+                                                <option value="รถของเล่น" selected>รถของเล่น</option>
+                                                <option value="ตุ๊กตา">ตุ๊กตา</option>
+                                                <option value="เครื่องดนตรีของเล่น">เครื่องดนตรีของเล่น</option>
+                                                <option value="ตัวต่อเลโก้">ตัวต่อเลโก้</option>
+                                                <option value="หุ่นยนต์">หุ่นยนต์</option>
+                                                <option value="เกมปริศนา">เกมปริศนา</option>
+                                                <option value="ลูกบอล">ลูกบอล</option>
+                                                <option value="ของเล่นที่มีเสียงดนตรี">ของเล่นที่มีเสียงดนตรี</option>
+                                                <option value="ของเล่นลากจูง">ของเล่นลากจูง</option>
+                                                <option value="ของเล่นเขย่า">ของเล่นเขย่า</option>
+                                                <option value="ของเล่นไม้">ของเล่นไม้</option>
+                                                <option value="ของเล่นเครื่องครัว">ของเล่นเครื่องครัว</option>
+                                            </select>
+                                        </td>
                                         <td></td>
                                     </tr>
                                     <tr class="active">
@@ -175,6 +184,6 @@
 //    });
 </script>
 <!-- footer -->
-<?php $this->load->view('includecss'); ?>
+<?php $this->load->view('footer'); ?>
 </body>
 </html>

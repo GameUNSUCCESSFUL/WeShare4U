@@ -54,7 +54,9 @@ $route['login'] = 'UserController/login';
 $route['logout'] = 'UserController/logout';
 $route['donor'] = 'DonateController';
 $route['receiver'] = 'ReceiverController/index';
+$route['receive'] = 'productDetailController/receive';
 
 $route['default_controller'] = 'welcome';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

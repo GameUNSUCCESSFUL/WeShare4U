@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+header('Access-Control-Allow-Origin: *');
 /**
  * Created by PhpStorm.
  * User: Game
@@ -15,7 +15,6 @@ class UserController extends CI_Controller
         $this->load->library(array('session'));
         $this->load->helper(array('url'));
     }
-
 
     public function index()
     {
@@ -164,7 +163,7 @@ class UserController extends CI_Controller
         // create the data object
         $data = new stdClass();
 
-        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+        if (isset($_SESSION['email'])) {
 
             // remove session datas
             foreach ($_SESSION as $key => $value) {
@@ -172,9 +171,7 @@ class UserController extends CI_Controller
             }
 
             // user logout ok
-            $this->load->view('header');
-            $this->load->view('user/logout/logout_success', $data);
-            $this->load->view('footer');
+            redirect('Welcome');
 
         } else {
 
@@ -184,6 +181,14 @@ class UserController extends CI_Controller
 
         }
 
+    }
+
+    /**
+     * @return object
+     */
+    public function forget_password()
+    {
+        return $this->load->view('user/login/forgetpass');
     }
 
 

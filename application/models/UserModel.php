@@ -45,12 +45,15 @@ class UserModel extends CI_Model
     public function do_login($email, $password)
     {
         $passwordmd5 = md5($password);
-        $sql = "SELECT * FROM tb_donation_users WHERE email LIKE '".$email."' && password LIKE '".$passwordmd5."'";
+        $sql = "SELECT * FROM tb_donation_users WHERE email LIKE '" . $email . "' && password LIKE '" . $passwordmd5 . "'";
         $query = $this->db->query($sql)->result();
-        if($query){
+        if ($query) {
             $_SESSION["email"] = $query[0]->email;
+            $_SESSION["firstname"] = $query[0]->firstname;
+            $_SESSION["lastname"] = $query[0]->lastname;
+            $_SESSION['logged_in'] = true;
             return "success";
-        }else{
+        } else {
             return "error";
         }
 //        $this->db->select('password');

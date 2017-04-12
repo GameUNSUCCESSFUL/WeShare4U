@@ -11,7 +11,7 @@
 </head>
 <body class="bg">
 <!-- nav -->
-<?php $this->load->view('navbar'); ?>
+<?php $this->load->view('navbarlogin'); ?>
 
 <!--input-->
 <div class="row">
@@ -27,7 +27,7 @@
 
                         <?php foreach ($rs->result_array() as $row): ?>
                         <img src="<?php echo base_url('uploads/donateImages/'.$row['img_path']) ?>"
-                             alt="...">
+                             width="200" height="300" alt="...">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -52,10 +52,10 @@
 
                         <div class="row">
                             <br><br><br><br><br><br><br>
-                            <button type="submit" id="bt" name="but_donate" class="btn btn-warning" onclick="location.href='<?php echo site_url('DonateController/show_edit/'.$row['product_id']);?>'" >
+                            <button type="submit" id="bt" name="but_edit" class="btn btn-warning" onclick="location.href='<?php echo site_url('DonateController/show_edit/'.$row['product_id']);?>'" >
                                 แก้ไข
                             </button>
-                            <button type="submit" id="bt" name="but_donate" class="btn btn-primary" onclick="location.href='<?php echo site_url('DonateController/add');?>'" >
+                            <button type="submit" id="bt" name="but_donate" class="btn btn-primary" onclick="location.href='<?php echo site_url('donor');?>'" >
                                 บริจาคเพิ่ม
                             </button>
                         </div>
