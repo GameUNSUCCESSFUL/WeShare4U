@@ -69,12 +69,13 @@
                             <div class="row">
                                 จำนวน : <input type="number" name="count" style="width: 5em" min="1"
                                                max="<?php echo $product['product_number'] ?>"
-                                               value="<?php echo $product['product_number'] ?>">
+                                               value="<?php echo $product['product_number'] ?>" <?php if($product['product_number'] == 0) echo "disabled"?>>
                                 / <?php echo $product['product_number'] ?> ชิ้น
+
                                 <input type="hidden" name="product_name" value="<?php echo $product['product_name'] ?>">
                                 <input type="hidden" name="product_id" value="<?php echo $product['product_id'] ?>">
                                 <br><br>
-                                <button id="bt-submit" class="btn btn-success" type="submit">รับบริจาค</button>
+                                <button id="bt-submit" class="btn btn-success" type="submit" <?php if($product['product_number'] == 0) echo "disabled"?>>รับบริจาค</button>
                                 <a class="btn btn-warning" href="receiver">ย้อนกลับ</a>
 
                                 <script>
@@ -129,9 +130,9 @@
 
                     </div>
 
-                    <div class="row visi" align="center" id="status">
-                        <div class="alert alert-success col-md-6 col-md-offset-3" role="alert" id="statusbox">
-                            <span id="textstatus"></span>
+                    <div class="row <?php if($product['product_number'] != 0){echo "visi";}?>" align="center" id="status">
+                        <div class="alert <?php if($product['product_number'] != 0){echo "alert-success";}else{echo "alert-danger";}?> col-md-6 col-md-offset-3" role="alert" id="statusbox">
+                            <span id="textstatus"><?php if($product['product_number'] == 0){echo "ของบริจาคหมด!!";}?></span>
                         </div>
                     </div>
                 </div>
