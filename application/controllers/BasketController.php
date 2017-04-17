@@ -7,6 +7,7 @@ class BasketController extends CI_Controller{
         parent::__construct();
     }
     public function index(){
+        $this->load->view('basket');
 
     }
     public function ajax_add_basket(){

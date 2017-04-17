@@ -55,7 +55,7 @@
                                              });
                                          </script>
                                      </div>
-                                     <div align="center"><a class="btn btn-success  btn-sm">ยืนยันการรับบริจาค</a></div>
+                                     <div align="center"><a href="<?php echo base_url('BasketController') ?>" class="btn btn-success  btn-sm">ยืนยันการรับบริจาค</a></div>
                                  </ul>
                              </div>
                          </div>
