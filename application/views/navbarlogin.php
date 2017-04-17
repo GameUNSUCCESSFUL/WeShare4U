@@ -20,12 +20,6 @@
         <div class="collapse navbar-collapse pull-right" role="navigation">
             <?php if (isset($_SESSION['email'])) : ?>
                  <ul class="nav navbar-nav none">
-                    <li class="padding2">
-                        <div align="right">
-                            ยินดีต้อนรับ <a href="#"><?php echo $_SESSION['firstname']." ".$_SESSION['lastname']?></a><br>
-                            <a href="<?php echo base_url('index.php/logout')?>">ออกจากระบบ</a>
-                        </div>
-                    </li>
                      <li class="">
                          <div align="right">
                              <div class="dropdown">
@@ -64,6 +58,12 @@
                                      <div align="center"><a class="btn btn-success  btn-sm">ยืนยันการรับบริจาค</a></div>
                                  </ul>
                              </div>
+                         </div>
+                     </li>
+                     <li class="padding2">
+                         <div align="right">
+                             ยินดีต้อนรับ <a href="#"><?php echo $_SESSION['firstname']." ".$_SESSION['lastname']?></a><br>
+                             <a href="<?php echo base_url('index.php/logout')?>">ออกจากระบบ</a>
                          </div>
                      </li>
                 </ul>

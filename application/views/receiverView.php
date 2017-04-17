@@ -7,9 +7,7 @@
 
     <?php include "includecss.php" ?>
 </head>
-
 <body>
-
 <?php include "navbarlogin.php" ?>
 
 <h1 align="center">Donation List</h1>
@@ -71,7 +69,7 @@
                 </a>
             </li>
             <?php for ($i = 1; $i <= $count; $i++) { ?>
-                <li><a href="
+                <li <?php if ($i == $page) echo "class='active'"?>><a href="
             <?php if (!isset($item)) {
                         echo base_url('index.php/ReceiverController?page=' . $i);
                     } else {
