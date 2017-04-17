@@ -19,13 +19,53 @@
         <!-- #section:basics/navbar.dropdown -->
         <div class="collapse navbar-collapse pull-right" role="navigation">
             <?php if (isset($_SESSION['email'])) : ?>
-                 <ul>
+                 <ul class="nav navbar-nav none">
                     <li class="padding2">
                         <div align="right">
                             ยินดีต้อนรับ <a href="#"><?php echo $_SESSION['firstname']." ".$_SESSION['lastname']?></a><br>
                             <a href="<?php echo base_url('index.php/logout')?>">ออกจากระบบ</a>
                         </div>
                     </li>
+                     <li class="">
+                         <div align="right">
+                             <div class="dropdown">
+                                 <button class="btn btn-success dropdown-toggle " type="button" data-toggle="dropdown" id="btn_basket">
+                                     <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                     <span class="badge" id="basket">
+                                     <?php
+                                     if ($this->session->basket) {
+                                         $basrket = $this->session->basket;
+                                         echo count($basrket);
+                                     } else {
+                                         echo 0;
+                                     }
+                                     ?>
+                                 </span>
+                                 </button>
+                                 <ul class="dropdown-menu pull-right" style="width: 350px">
+                                     <div class="panel panel-default">
+                                         <table class="table" id="output">
+                                         </table>
+                                         <script>
+                                             $(document).ready(function (){
+                                                 $("#btn_basket").click(function () {
+                                                     $.ajax({
+                                                         url: "<?php echo base_url('BasketController/get_basket') ?>",
+                                                         dataType: "text",
+                                                         cache: false,
+                                                         success: function (data) {
+                                                             $("#output").html(data);
+                                                         }
+                                                     });
+                                                 });
+                                             });
+                                         </script>
+                                     </div>
+                                     <div align="center"><a class="btn btn-success  btn-sm">ยืนยันการรับบริจาค</a></div>
+                                 </ul>
+                             </div>
+                         </div>
+                     </li>
                 </ul>
             <?php else: ?>
                 <ul>

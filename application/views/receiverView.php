@@ -7,7 +7,9 @@
 
     <?php include "includecss.php" ?>
 </head>
+
 <body>
+
 <?php include "navbarlogin.php" ?>
 
 <h1 align="center">Donation List</h1>

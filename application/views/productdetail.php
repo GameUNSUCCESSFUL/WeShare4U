@@ -12,7 +12,7 @@
 
 <body>
 <!-- bar -->
-<?php include "navbar.php" ?>
+<?php include "navbarlogin.php" ?>
 <div class="container">
     <div class="row">
         <div class="col-md-1"></div>
