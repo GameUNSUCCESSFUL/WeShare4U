@@ -10,7 +10,10 @@
 <body>
 <?php include "navbarlogin.php" ?>
 
-<h1 align="center">Donation List</h1>
+<br>
+<div class="thumbnail">
+<br>
+    <span class="topic">รายชื่อของบริจาค</span>
 
 <div class="container">
     <div class="featured-block">
@@ -21,9 +24,9 @@
                 <input class="form-control" type="text" name="keyword" id="keyword" value="" placeholder="Search...">
                 <input class="btn btn-default" type="submit" name="filter" value="Go">
                 <br>
-                <input type="radio" name="searchselect" value="selectname" checked>Name
-                <input type="radio" name="searchselect" value="selecttype">Type
-                <input type="radio" name="searchselect" value="selectkey">Keyword
+                <input type="radio" name="searchselect" value="selectname" checked>ชื่อ
+                <input type="radio" name="searchselect" value="selecttype">ชนิด
+                <input type="radio" name="searchselect" value="selectkey">คำหลัก
             </form>
             <br>
         </div>
@@ -39,6 +42,7 @@
                             <div class="caption">
                                 <h1 align="center"> <?php echo $r['product_name'] ?> </h1>
                                 <h4> <?php echo $r['product_type'] ?></h4>
+                                <h8> <?php echo $r['timestamp'] ?></h8>
                                 <div align="right">
 
                                     <a style="color: #0000FF" id="<?php echo $x = $x+1;?>" href="<?php echo base_url('index.php/productDetailController?id='.$r['product_id'])?>">รายละเอียดเพิ่มเติม...</a>
@@ -90,6 +94,8 @@
         </ul>
     </nav>
 </div>
+</div>
+<br>
 
 <?php include "footer.php" ?>
 
