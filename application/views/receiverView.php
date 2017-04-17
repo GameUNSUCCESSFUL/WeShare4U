@@ -45,6 +45,9 @@
 
                                 <div class="caption">
                                     <h1 align="center"> <?php echo $r['product_name'] ?> </h1>
+                                    <?php if($page==1 && $x <5){ ?>
+                                    <span class="label label-danger">ใหม่!!</span>
+                                    <?php } ?>
                                     <h4> <?php echo $r['product_type'] ?></h4>
                                     <h8> <?php echo $r['timestamp'] ?></h8>
                                     <div align="right">
