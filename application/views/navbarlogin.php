@@ -22,6 +22,7 @@
                  <ul>
                     <li class="padding2">
                         <div align="right">
+                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
                             ยินดีต้อนรับ <a href="#"><?php echo $_SESSION['firstname']." ".$_SESSION['lastname']?></a><br>
                             <a href="<?php echo base_url('index.php/logout')?>">ออกจากระบบ</a>
                         </div>
