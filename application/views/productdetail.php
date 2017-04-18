@@ -15,10 +15,9 @@
 <?php include "navbarlogin.php" ?>
 <div class="container">
     <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
+        <div class="col-md-12" >
             <br>
-            <div class="thumbnail">
+            <div class="thumbnail" style="padding: 30px 100px;">
                 <span class="topic">รายละเอียดของบริจาค</span>
                 <div class="row">
 
@@ -76,7 +75,7 @@
                                 <input type="hidden" name="product_id" value="<?php echo $product['product_id'] ?>">
                                 <br><br>
                                 <button id="bt-submit" class="btn btn-success" type="submit" <?php if($product['product_number'] == 0) echo "disabled"?>>รับบริจาค</button>
-                                <a class="btn btn-warning" href="receiver">ย้อนกลับ</a>
+<!--                                <a class="btn btn-warning" href="receiver">ย้อนกลับ</a>-->
 
                                 <script>
                                     $(document).ready(function () {
@@ -99,7 +98,7 @@
                                             var product_count = $("input[name='count']").val();
                                             $.ajax({
                                                 type: "POST",
-                                                url: "<?php echo base_url('BasketController/ajax_add_basket') ?>",
+                                                url: "<?php echo base_url('index.php/BasketController/ajax_add_basket') ?>",
                                                 data: {
                                                     product_name: product_name,
                                                     product_id: product_id,
@@ -110,12 +109,14 @@
                                                 success: function (data) {
                                                     if (data.message1 == 'success') {
                                                         $("#status").removeClass("visi");
-                                                        $("#textstatus").text("เพิ่มของบริจาคสำเร็จ")
+                                                        $("#textstatus").text("เพิ่มของบริจาคสำเร็จ");
+                                                        $("#btn_basket").trigger("click");
                                                     } else if (data.message1 == 'fall') {
                                                         $("#status").removeClass("visi");
                                                         $("#statusbox").removeClass("alert-success");
                                                         $("#statusbox").addClass("alert-warning");
-                                                        $("#textstatus").text("แก้ไขจำนวนเรียบร้อยแล้ว")
+                                                        $("#textstatus").text("แก้ไขจำนวนเรียบร้อยแล้ว");
+                                                        $("#btn_basket").trigger("click");
                                                     }
                                                     $("#basket").text(data.message2)
                                                 }
@@ -140,7 +141,7 @@
 
 
             </div>
-            <div class="thumbnail">
+            <div class="thumbnail" style="padding: 30px 100px;">
                 <span class="topic topic-top">ของบริจาคที่เกียวข้อง</span><br>
                 <div class="row">
                     <?php foreach ($product_connect as $con): ?>
@@ -151,7 +152,7 @@
                                     <h3><?php echo $con['product_name'] ?></h3>
                                     <p><?php echo $con['product_detail'] ?></p>
                                     <p>
-                                        <a href="<?php echo base_url('productDetailController?id=' . $con['product_id']) ?>"
+                                        <a href="<?php echo base_url('index.php/productDetailController?id=' . $con['product_id']) ?>"
                                            class="btn btn-primary" role="button">รายละเอียด</a></p>
                                 </div>
                             </div>

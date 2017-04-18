@@ -40,7 +40,7 @@
                             <h2>ชื่อของบริจาค : <?php echo $row['product_name']; ?></h2>
                             <h5>
                                 <p>สี : <?php echo $row['product_color'] ?></p>
-                                <p>จำนวน : <?php echo $row['weight_number'] ?></p>
+                                <p>จำนวน : <?php echo $row['product_number'] ?> ชิ้น</p>
                                 <p>น้ำหนัก : <?php echo $row['weight_number'] . "  " . $row['weight_type'] ?></p>
                                 <p>ขนาด : <?php echo $row['size_width'] . " x " . $row['size_long'] . "  " . $row['size_type'] ?> </p>
                                 <p>รายละเเอียด : <?php echo $row['product_detail'] ?></p>

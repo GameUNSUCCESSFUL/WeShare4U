@@ -45,7 +45,7 @@
                                              $(document).ready(function (){
                                                  $("#btn_basket").click(function () {
                                                      $.ajax({
-                                                         url: "<?php echo base_url('BasketController/get_basket') ?>",
+                                                         url: "<?php echo base_url('index.php/BasketController/get_basket') ?>",
                                                          dataType: "text",
                                                          cache: false,
                                                          success: function (data) {
@@ -56,7 +56,7 @@
                                              });
                                          </script>
                                      </div>
-                                     <div align="center"><a href="<?php echo base_url('BasketController') ?>" class="btn btn-success  btn-sm">ยืนยันการรับบริจาค</a></div>
+                                     <div align="center"><button onclick="location.href='<?php echo base_url('index.php/BasketController') ?>'" id="view_basket"  class="btn btn-success  btn-sm">ตะกร้าสินค้า</button></div>
                                  </ul>
                              </div>
                          </div>
