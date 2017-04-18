@@ -11,11 +11,32 @@
     margin-top: 5px;
     list-style-type: none;
 }
-.padding2{
-    width:200px;
+.visi{
+    visibility: hidden;
+}
+.topic{
+    display: block;
+    width: 70%;
     color: white;
-    margin-top: 15px;
-    list-style-type: none;
+    font-size: 20px;
+    margin: 0px;
+    padding: 3px 10px;
+    background-color: #438eb9;
+    border-bottom-right-radius: 100px;
+    box-shadow: 2px 2px 2px grey;
+}
+.topic-top{
+    background-color: #438eb9;
+}
+.padding2{
+    display: block;
+    border-style:solid;
+    border-color: red;
+    display: block;
+    width:150px;
+    color: white;
+    border:none;
+    margin: 5px;
 }
 a:hover{
     color: white;

@@ -19,6 +19,7 @@ class ReceiverController extends CI_Controller
 
         $page = $this->input->get('page');
         if($page == 1 || $page <1 || $page == null){
+            $page = 1;
             $resultpage = 0;
         }else{
             $resultpage = ($page-1)*8;
