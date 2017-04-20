@@ -25,10 +25,10 @@ class UserModel extends CI_Model
 
     public function create_user($email, $password, $firstname, $lastname, $identity_card, $district, $province, $zip_code, $address, $phone)
     {
-
+        $passwordmd5 = md5($password);
         $data = array(
             'email' => $email,
-            'password' => $this->hash_password($password),
+            'password' => $passwordmd5,
             'firstname' => $firstname,
             'lastname' => $lastname,
             'identity_card' => $identity_card,
