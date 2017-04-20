@@ -110,12 +110,15 @@
                                                 success: function (data) {
                                                     if (data.message1 == 'success') {
                                                         $("#status").removeClass("visi");
-                                                        $("#textstatus").text("เพิ่มของบริจาคสำเร็จ")
+                                                        $("#textstatus").text("เพิ่มของบริจาคสำเร็จ");
+                                                        $("#btn_basket").trigger("click");
+
                                                     } else if (data.message1 == 'fall') {
                                                         $("#status").removeClass("visi");
                                                         $("#statusbox").removeClass("alert-success");
                                                         $("#statusbox").addClass("alert-warning");
-                                                        $("#textstatus").text("แก้ไขจำนวนเรียบร้อยแล้ว")
+                                                        $("#textstatus").text("แก้ไขจำนวนเรียบร้อยแล้ว");
+                                                        $("#btn_basket").trigger("click");
                                                     }
                                                     $("#basket").text(data.message2)
                                                 }
