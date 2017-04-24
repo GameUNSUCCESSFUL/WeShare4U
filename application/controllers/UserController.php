@@ -35,8 +35,8 @@ class UserController extends CI_Controller
 
         // set validation rules
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[tb_donation_users.email]');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|max_length[16]');
-        $this->form_validation->set_rules('password_confirm', 'Confirm Password', 'trim|required|min_length[8]|matches[password]');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
+        $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|min_length[8]|matches[password]');
         $this->form_validation->set_rules('firstname', 'Firstname', 'trim|required');
         $this->form_validation->set_rules('lastname', 'Lastname', 'trim|required');
         $this->form_validation->set_rules('identity_card', 'Identity_card', 'trim|required');
