@@ -111,6 +111,10 @@
                                                         $("#status").removeClass("visi");
                                                         $("#textstatus").text("เพิ่มของบริจาคสำเร็จ");
                                                         $("#btn_basket").trigger("click");
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/สุขพัฒน์
                                                     } else if (data.message1 == 'fall') {
                                                         $("#status").removeClass("visi");
                                                         $("#statusbox").removeClass("alert-success");
