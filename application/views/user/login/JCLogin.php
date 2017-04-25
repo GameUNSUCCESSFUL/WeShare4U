@@ -54,7 +54,7 @@
                                             if(<?php echo $_SESSION["user_type"];?> == 'user'){
                                                 window.location.href="<?php echo base_url('index.php/Welcome/select'); ?>";
                                             }else {
-                                                
+                                                window.location.href="<?php echo base_url('index.php/AdminController'); ?>";
                                             }
                                         }else if(data == "captcha"){
                                             $("#error").text("Please Identify yourself");

@@ -111,7 +111,6 @@
                                 <p class="help-block">กรุณาตอบคำถาม</p>
                             </div>
 
-                            <div align="center" id="recaptcha_regis" class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
 
                             <div class="form-group">
                                 <input type="submit" id="submit_register" class="btn btn-default" value="Register">
