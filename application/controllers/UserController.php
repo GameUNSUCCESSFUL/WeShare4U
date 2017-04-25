@@ -41,9 +41,7 @@ class UserController extends CI_Controller
             'file_name' => $img_name
         );
         $this->load->library('upload', $config);
-
         if ($this->upload->do_upload('identity_image')) {
-
         } else {
             echo $this->upload->display_errors();
         }
@@ -95,7 +93,7 @@ class UserController extends CI_Controller
 
             // set variables from the form
                $img_path = $img_name . $this->upload->data('file_ext');
-//
+
             if ($this->UserModel->create_user($email, $password, $firstname, $lastname, $identity_card, $address, $phone, $question, $answer, $img_path)) {
 
                 // user creation ok
