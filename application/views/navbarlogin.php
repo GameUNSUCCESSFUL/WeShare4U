@@ -39,7 +39,7 @@
                                  </button>
                                  <ul class="dropdown-menu pull-right" style="width: 350px">
                                      <div class="panel panel-default">
-                                         <table class="table" id="1">
+                                         <table class="table" id="table_output">
                                          </table>
                                          <script>
                                              $(document).ready(function (){
@@ -49,7 +49,7 @@
                                                          dataType: "text",
                                                          cache: false,
                                                          success: function (data) {
-                                                             $("#1").html(data);
+                                                             $("#table_output").html(data);
                                                          }
                                                      });
                                                  });
