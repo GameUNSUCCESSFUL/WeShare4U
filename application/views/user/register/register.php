@@ -84,7 +84,7 @@
 
 
                             <div class="form-group">
-                                <input type="submit" class="btn btn-default" value="Register">
+                                <input type="submit" id="submit_register" class="btn btn-default" value="Register">
                             </div>
                             </form>
                         </div>
