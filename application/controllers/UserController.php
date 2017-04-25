@@ -122,6 +122,7 @@ class UserController extends CI_Controller
         $email = $this->input->post('email');
         $password = $this->input->post('password');
         $captcha = $this->input->post('captcha');
+        $_SESSION["user_type"] = '';
         if ($captcha != null) {
             $result = $this->UserModel->do_login($email, $password);
             echo $result;

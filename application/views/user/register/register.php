@@ -34,13 +34,13 @@
 
                             <div class="form-group">
                                 <label for="email"><h4>อีเมล์</h4></label>
-                                <input type="email" class="form-control" id="email" name="email"
+                                <input type="email" class="form-control" id="re_email" name="email"
                                        placeholder="Enter your email" >
                                 <p class="help-block">กรุณากรอกที่อยู่อีเมล์ที่ถูกต้อง</p>
                             </div>
                             <div class="form-group">
                                 <label for="password"><h4>รหัสผ่าน</h4></label>
-                                <input type="password" class="form-control" id="password" name="password"
+                                <input type="password" class="form-control" id="re_password" name="password"
                                        placeholder="Enter a password">
                                 <p class="help-block">กรุณากรอกรหัสผ่านอย่างน้อย 8 - 16 ตัวอักษร</p>
                             </div>

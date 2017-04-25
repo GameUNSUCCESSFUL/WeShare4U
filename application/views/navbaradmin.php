@@ -33,8 +33,8 @@
 
         <div class="collapse navbar-collapse" role="navigation">
             <ul class="nav navbar-nav">
-                <li><a href="<?php echo base_url('AdminController') ?>">หน้าหลัก</a></li>
-                <li><a href="<?php echo base_url('AdminController/user_management') ?>">จัดการผู้ใช้งาน</a></li>
+                <li><a href="<?php echo base_url('index.php/AdminController') ?>">หน้าหลัก</a></li>
+                <li><a href="<?php echo base_url('index.php/AdminController/user_management') ?>">จัดการผู้ใช้งาน</a></li>
 
             </ul>
         </div>
