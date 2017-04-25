@@ -28,7 +28,7 @@
                         <div class="page-header">
                             <h1></h1>
                         </div>
-                        <?= form_open('UserController/register') ?>
+                        <?= form_open_multipart('UserController/register') ?>
                         <div class="col-xs-6 col-md-2"></div>
                         <div class="col-xs-6 col-md-6">
 
