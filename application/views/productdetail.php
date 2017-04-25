@@ -70,18 +70,22 @@
                             จำนวน : <input type="number" name="count" style="width: 5em" min="1"
                                            max="<?php echo $product['product_number'] ?>"
                                            value="<?php
-                                           $basket = $this->session->basket;
-                                           $count = null;
-                                           if ($_GET['id']) {
-                                               $id = $_GET['id'];
-                                               foreach ($basket as $item) {
-                                                   if($item['product_id']==$id) {
-                                                       $count = $item['count'];
+                                           if($basket = $this->session->basket) {
+                                               $basket = $this->session->basket;
+                                               $count = null;
+                                               if ($_GET['id']) {
+                                                   $id = $_GET['id'];
+                                                   foreach ($basket as $itemfor) {
+                                                       if ($itemfor['product_id'] == $id) {
+                                                           $count = $itemfor['count'];
+                                                       }
                                                    }
                                                }
-                                           }
-                                           if ($count != null){
-                                               echo $count;
+                                               if ($count != null) {
+                                                   echo $count;
+                                               } else {
+                                                   echo $product['product_number'];
+                                               }
                                            }else{
                                                echo $product['product_number'];
                                            }
