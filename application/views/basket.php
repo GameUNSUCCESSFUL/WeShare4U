@@ -54,7 +54,7 @@
                         <td>จำนวน : <input type="number" name="count" onkeydown="return false" id="<?php echo $x ?>" value="<?php echo $item['count'] ?>" width="10px" min="0" max="<?php echo $item['max'] ?>"> / <?php echo $item['max']?> ชิ้น
                         </td>
                         <td><a class="btn btn-info"
-                               href="<?php echo base_url('productDetailController?id=' . $item['product_id']."&count=".$item['count']) ?>">แก้ไข</a>
+                               href="<?php echo base_url('productDetailController?id=' . $item['product_id']) ?>">แก้ไข</a>
                         <td><a class="btn btn-danger" data-target="#btn_delete" id="btn_<?php echo $x ?>" onclick="load_val(<?php echo $x ?>)" data-toggle="modal">ลบ</a>
 
 
