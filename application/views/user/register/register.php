@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <?php $this->load->view('includecss'); ?>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 
 <body>
 <!-- bar -->
-<?php $this->load->view('navbarlogin') ?>
+<?php $this->load->view('navbarlogin'); ?>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -111,6 +110,8 @@
                                 <p class="help-block">กรุณาตอบคำถาม</p>
                             </div>
 
+                            <div align="center" id="2" class="g-recaptcha"
+                                 data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
 
                             <div class="form-group">
                                 <input type="submit" id="submit_register" class="btn btn-default" value="Register">
