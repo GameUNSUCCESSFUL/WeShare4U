@@ -23,7 +23,7 @@ class UserModel extends CI_Model
     }
 
 
-    public function create_user($email, $password, $firstname, $lastname, $identity_card, $district, $province, $zip_code, $address, $phone)
+    public function create_user($email, $password, $firstname, $lastname, $identity_card ,$address, $phone, $question, $answer, $img_path)
     {
         $passwordmd5 = md5($password);
         $data = array(
@@ -32,11 +32,13 @@ class UserModel extends CI_Model
             'firstname' => $firstname,
             'lastname' => $lastname,
             'identity_card' => $identity_card,
-            'district' => $district,
-            'province' => $province,
-            'zip_code' => $zip_code,
             'address' => $address,
             'phone' => $phone,
+            'question' => $question,
+            'answer' => $answer,
+            'user_type' => 'user',
+            'access_status' => 0,
+            'img_path' => $img_path
         );
         return $this->db->insert('tb_donation_users', $data);
     }
