@@ -33,10 +33,8 @@
 
         <div class="collapse navbar-collapse" role="navigation">
             <ul class="nav navbar-nav">
-                <li><a href="#">หน้าหลัก</a></li>
-                <li><a href="#">สถิติการบริจาค</a></li>
-                <li><a href="#">คำถามที่พบบ่อย</a></li>
-                <li><a href="#">เกี่ยวกับเรา</a></li>
+                <li><a href="<?php echo base_url('AdminController') ?>">หน้าหลัก</a></li>
+                <li><a href="<?php echo base_url('AdminController/user_management') ?>">จัดการผู้ใช้งาน</a></li>
 
             </ul>
         </div>

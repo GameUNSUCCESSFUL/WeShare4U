@@ -18,7 +18,7 @@
 <div class="container">
     <br>
     <div class="thumbnail">
-        <div align="center"><h3 class="topic2">ตะกร้าสินค้า</h3></div>
+        <div align="center"><h3 class="topic">ตะกร้าสินค้า</h3></div>
         <br><br>
         <table class="table" id="output">
             <tr>
