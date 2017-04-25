@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 header('Access-Control-Allow-Origin: *');
+
 /**
  * Created by PhpStorm.
  * User: Game
@@ -30,7 +31,6 @@ class UserController extends CI_Controller
 
     public function register()
     {
-
         $img_name = time() . rand();
         $config = array(
             'upload_path' => 'uploads/donateImages',
@@ -42,20 +42,27 @@ class UserController extends CI_Controller
         );
         $this->load->library('upload', $config);
 
+        if ($this->upload->do_upload('identity_image')) {
+
+        } else {
+            echo $this->upload->display_errors();
+        }
+
+
         // create the data object
         $data = new stdClass();
 
         // set validation rules
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[tb_donation_users.email]');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|max_length[16]|password_check[1,1,1]');
-        $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|min_length[8]|max_length[16]|matches[password]');
-        $this->form_validation->set_rules('firstname', 'Firstname', 'trim|required');
-        $this->form_validation->set_rules('lastname', 'Lastname', 'trim|required');
-        $this->form_validation->set_rules('identity_card', 'Identity_card', 'trim|required');
-        $this->form_validation->set_rules('address', 'Address', 'trim|required');
-        $this->form_validation->set_rules('phone', 'Phone', 'trim|required');
-        $this->form_validation->set_rules('question', 'Question', 'trim|required');
-        $this->form_validation->set_rules('answer', 'Answer', 'trim|required');
+//        $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|max_length[16]|password_check[1,1,1]');
+//        $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|min_length[8]|max_length[16]|matches[password]');
+//        $this->form_validation->set_rules('firstname', 'Firstname', 'trim|required');
+//        $this->form_validation->set_rules('lastname', 'Lastname', 'trim|required');
+//        $this->form_validation->set_rules('identity_card', 'Identity_card', 'trim|required');
+//        $this->form_validation->set_rules('address', 'Address', 'trim|required');
+//        $this->form_validation->set_rules('phone', 'Phone', 'trim|required');
+//        $this->form_validation->set_rules('question', 'Question', 'trim|required');
+//        $this->form_validation->set_rules('answer', 'Answer', 'trim|required');
 
         $email = $this->input->post('email');
         $password = $this->input->post('password');
@@ -79,7 +86,6 @@ class UserController extends CI_Controller
             'answer' => $answer
         );
 
-
         if ($this->form_validation->run() === false) {
 
             // validation not ok, send validation errors to the view
@@ -88,28 +94,22 @@ class UserController extends CI_Controller
         } else {
 
             // set variables from the form
-            if ($this->upload->do_upload('identity_image')) {
-                $img_path = $img_name . $this->upload->data('file_ext');
+               $img_path = $img_name . $this->upload->data('file_ext');
+//
+            if ($this->UserModel->create_user($email, $password, $firstname, $lastname, $identity_card, $address, $phone, $question, $answer, $img_path)) {
 
-                if ($this->UserModel->create_user($email, $password, $firstname, $lastname, $identity_card, $address, $phone, $question, $answer, $img_path)) {
+                // user creation ok
+                $this->load->view('user/register/register_success', $data);
 
-                    // user creation ok
-                    $this->load->view('user/register/register_success', $data);
-
-                } else {
-                    // user creation failed, this should never happen
-                    $data->error = 'There was a problem creating your new account. Please try again.';
-
-                    // send error to the view
-                    $this->load->view('user/register/register', $data);
-                }
             } else {
-                echo $this->upload->display_errors();
+                // user creation failed, this should never happen
+                $data->error = 'There was a problem creating your new account. Please try again.';
+
+                // send error to the view
+                $this->load->view('user/register/register', $data);
             }
-
-
-
         }
+
 
     }
 
@@ -119,17 +119,18 @@ class UserController extends CI_Controller
      * @access public
      * @return void
      */
-    public function login()
+    public
+    function login()
     {
         $email = $this->input->post('email');
         $password = $this->input->post('password');
         $captcha = $this->input->post('captcha');
-        if($captcha != null){
-            $result = $this->UserModel->do_login($email,$password);
+        if ($captcha != null) {
+            $result = $this->UserModel->do_login($email, $password);
             echo $result;
-        }else if ($email == null || $password == null) {
+        } else if ($email == null || $password == null) {
             echo 1;
-        }else{
+        } else {
             echo "captcha";
         }
 //        // create the data object
@@ -185,7 +186,8 @@ class UserController extends CI_Controller
      * @access public
      * @return void
      */
-    public function logout()
+    public
+    function logout()
     {
 
         // create the data object
@@ -214,7 +216,8 @@ class UserController extends CI_Controller
     /**
      * @return object
      */
-    public function forget_password()
+    public
+    function forget_password()
     {
         return $this->load->view('user/login/forgetpass');
     }

@@ -28,8 +28,7 @@
                         <div class="page-header">
                             <h1></h1>
                         </div>
-                        <?php $attributes = array('id' => 'registry');
-                        echo form_open('UserController/register', $attributes); ?>
+                        <?= form_open('UserController/register') ?>
                         <div class="col-xs-6 col-md-2"></div>
                         <div class="col-xs-6 col-md-6">
 
@@ -74,8 +73,7 @@
 
                             <div class="form-group">
                                 <label for="identity_image"><h4>รูปบัตรประจำตัวประชาชน</h4></label>
-                                <input type="file" class="form-control" id="identity_image" name="identity_image"
-                                       size="30" onchange='openFile()' multiple>
+                                <input type="file" class="form-control"  id="identity_image" name="identity_image" size="30" onchange='openFile()' multiple>
                                 <p class="help-block"><img id='output' height=300 width=300/></p>
                             </div>
 
@@ -113,9 +111,6 @@
                                 <p class="help-block">กรุณาตอบคำถาม</p>
                             </div>
 
-                            <div class="form-group">
-                                <div align="center" id="recaptcha" class="g-recaptcha" data-sitekey="6LdM9RoUAAAAABEquyphv8VNH7W3l0aG92CKTYKc"></div>
-                            </div>
 
                             <div class="form-group">
                                 <input type="submit" id="submit_register" class="btn btn-default" value="Register">
