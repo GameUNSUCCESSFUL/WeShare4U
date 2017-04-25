@@ -223,7 +223,7 @@
         </table>
         <div align="right">
             <a class="btn btn-info" href="<?php echo base_url('receiver')?>">รับของบริจาคเพิ่ม</a>
-            <a class="btn btn-success" href="<?php echo base_url('welcome')?>">ยืนยันการรับบริจาค</a>
+            <a class="btn btn-success" href="<?php echo base_url('welcome/empty_page')?>">ยืนยันการรับบริจาค</a>
             <br><br>
         </div>
         <div>
