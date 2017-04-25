@@ -25,6 +25,19 @@
     border-bottom-right-radius: 100px;
     box-shadow: 2px 2px 2px grey;
 }
+.topic2{
+    display: block;
+    width: 70%;
+    color: white;
+    font-size: 20px;
+    margin: 0px;
+    padding: 3px 10px;
+    background-color: #438eb9;
+
+    border-bottom-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    box-shadow: 2px 2px 2px grey;
+}
 .topic-top{
     background-color: #438eb9;
 }

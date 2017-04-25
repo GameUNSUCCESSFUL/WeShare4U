@@ -19,7 +19,7 @@
         <br>
         <div class="thumbnail">
             <br>
-            <div align="center"><h3 class="topic">จัดการผู้ใช้งาน</h3></div>
+            <div align="center"><h3 class="topic2">จัดการผู้ใช้งาน</h3></div>
             <br><br>
             <table class="table" id="output">
                 <tr>
