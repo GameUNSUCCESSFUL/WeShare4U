@@ -83,17 +83,19 @@
                         });
                         $('button[id=btn_not_accept]').click(function () {
                             var user_id = id;
+                            var id_email = "#email_"+id;
+                            var email = $(id_email).val();
                             $.ajax({
                                 type: "POST",
                                 url: "<?php echo base_url('index.php/AdminController/up_status_user') ?>",
                                 data: {
                                     user_id: user_id,
+                                    email:email,
                                     status:2
                                 },
                                 dataType: "text",
                                 cache: false,
                                 success: function (data) {
-                                    alert(data);
                                     if (data == "pass"){
                                         location.reload();
                                     }

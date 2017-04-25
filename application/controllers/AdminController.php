@@ -46,17 +46,17 @@ class AdminController extends CI_Controller
         }else {
             $text = "ขอแสดงความเสียใจ คุณไม่ได้รับการอนุมัติเข้าใช้งาน";
         }
-        echo $text;
         $this->email->from('weshared4ugroup4@gmail.com', 'WeShare4U');
         $this->email->to($email);
         $this->email->subject('WeShare4U');
         $this->email->message($text);
-        //$this->email->send();
+        $this->email->send();
         $row = array(
             'access_status' => $status
         );
         $this->db->where('user_id', $user_id);
         $this->db->update('tb_donation_users', $row);
+        echo "pass";
     }
 
 
