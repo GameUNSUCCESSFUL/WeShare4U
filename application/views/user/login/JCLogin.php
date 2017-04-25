@@ -56,6 +56,8 @@
                                                 window.location.href="<?php echo base_url('index.php/Welcome/select'); ?>";
                                         }else if(data == "admin"){
                                             window.location.href="<?php echo base_url('index.php/AdminController'); ?>";
+                                        }else if(data == "not_access"){
+                                            window.location.href="<?php echo base_url('index.php/Welcome'); ?>";
                                         }else if(data == "captcha"){
                                             $("#error").text("Please Identify yourself");
                                         }else if(data == 1){

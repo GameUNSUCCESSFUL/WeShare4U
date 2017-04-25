@@ -59,9 +59,16 @@ class UserModel extends CI_Model
             if($query[0]->access_status == 1){
                 if($_SESSION['user_type']=='admin'){
                     return "admin";
-                }else if(){
+                }else{
                     return "success";
                 }
+            }else{
+                $_SESSION["email"] = '';
+                $_SESSION["firstname"] = '';
+                $_SESSION["lastname"] = '';
+                $_SESSION["user_type"] = '';
+                $_SESSION['logged_in'] = false;
+                return "not_access";
             }
 
         } else {
