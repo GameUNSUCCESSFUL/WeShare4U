@@ -14,16 +14,14 @@
 <!-- bar -->
 
 <?php include "navbaradmin.php" ?>
-
+<div style="height: 100vh">
 <div class="container">
     <br>
     <div class="thumbnail">
         <br><br>
-        <div align="center"><h1 >ยินดีต้อนรับ</h1></div>
+        <div align="center"><h1 style="padding-top: 150px;padding-bottom: 150px">ยินดีต้อนรับ</h1></div>
         <br><br><br>
     </div>
-</div>
-</div>
 </div>
 </div>
 <!-- footer -->
