@@ -34,6 +34,7 @@
                 <br>
             </div>
 
+<<<<<<< HEAD
             <div class="row">
                 <?php $x = 0;
                 foreach ($dbquery as $r): ?>
@@ -56,9 +57,34 @@
                                         <a style="color: #0000FF" id="<?php echo $x = $x + 1; ?>"
                                            href="<?php echo base_url('index.php/productDetailController?id=' . $r['product_id']) ?>">รายละเอียดเพิ่มเติม...</a>
 
+=======
+        <div class="row">
+            <?php $x = 0; foreach ($dbquery as $r): ?>
+                <div class="col-md-3">
+                    <div class="block">
+                        <div class="thumbnail">
+                            <?php
+                            if(mysqli_num_rows($dbquery)==0){ ?>
+
+
+
+                            <?php }else{ ?>
+                                <img src="<?php echo base_url('uploads/donateImages/' . $r['img_path']) ?>"
+                                     alt="...">
+
+                                <div class="caption">
+                                    <h1 align="center"> <?php echo $r['product_name'] ?> </h1>
+                                    <h4> <?php echo $r['product_type'] ?></h4>
+                                    <h8> <?php echo $r['timestamp'] ?></h8>
+                                    <div align="right">
+
+                                        <a style="color: #0000FF" id="<?php echo $x = $x+1;?>" href="<?php echo base_url('index.php/productDetailController?id='.$r['product_id'])?>">รายละเอียดเพิ่มเติม...</a>
+
+>>>>>>> origin/Ju
                                     </div>
                                 </div>
-                            </div>
+                            <?php } ?>
+
                         </div>
                     </div>
 

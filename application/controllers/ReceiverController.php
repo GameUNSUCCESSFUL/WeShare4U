@@ -26,8 +26,14 @@ class ReceiverController extends CI_Controller
         }
         $query = $this->db->query('SELECT * FROM tb_donation_products ORDER BY timestamp DESC LIMIT '.$resultpage.',8');
         $queryall = $this->db->query('SELECT * FROM tb_donation_products ORDER BY timestamp DESC ');
-        $countall = $queryall->result_array();
-        $data['dbquery'] = $query->result_array();
+
+        if(empty($query->result_array())){
+            $data['dbquery'] = 'Not Found';
+        }else{
+            $countall = $queryall->result_array();
+            $data['dbquery'] = $query->result_array();
+        }
+
         $data['count'] = ceil(count($countall)/8.0);
         $data['page'] = $page;
         $this->load->view('receiverView', $data);
@@ -65,39 +71,23 @@ class ReceiverController extends CI_Controller
             if($searchselect == 'selectname'){
                 $query = $this->db->query('SELECT * FROM tb_donation_products WHERE product_name LIKE "%'.$searchitem.'%" ORDER BY timestamp DESC LIMIT '.$resultpage.',8');
                 $queryall = $this->db->query('SELECT * FROM tb_donation_products WHERE product_name LIKE "%'.$searchitem.'%" ORDER BY timestamp DESC');
-                $data['dbquery'] = $query->result_array();
-                $countall = $queryall->result_array();
-                $data['count'] = ceil(count($countall)/8.0);
-                $data['page'] = $page;
-                $data['searchitem'] = $searchitem;
-                $data['searchselect'] =$searchselect;
-                $data['item'] = 1;
-                $data['links'] = '';
             }else if($searchselect == 'selecttype'){
                 $query = $this->db->query('SELECT * FROM tb_donation_products WHERE product_type LIKE "%'.$searchitem.'%" ORDER BY timestamp DESC LIMIT '.$resultpage.',8');
                 $queryall = $this->db->query('SELECT * FROM tb_donation_products WHERE product_type LIKE "%'.$searchitem.'%" ORDER BY timestamp DESC');
-                $data['dbquery'] = $query->result_array();
-
-                $countall = $queryall->result_array();
-                $data['count'] = ceil(count($countall)/8.0);
-                $data['page'] = $page;
-
-                $data['searchitem'] = $searchitem;
-                $data['searchselect'] =$searchselect;
-                $data['links'] = '';
             }else{
                 $query = $this->db->query('SELECT * FROM tb_donation_products WHERE product_name LIKE "%'.$searchitem.'%" OR product_type LIKE "%'.$searchitem.'%" OR product_detail LIKE "%'.$searchitem.'%" ORDER BY timestamp DESC LIMIT '.$resultpage.',8');
                 $queryall = $this->db->query('SELECT * FROM tb_donation_products WHERE product_name LIKE "%'.$searchitem.'%" OR product_type LIKE "%'.$searchitem.'%" OR product_detail LIKE "%'.$searchitem.'%" ORDER BY timestamp DESC');
-                $data['dbquery'] = $query->result_array();
-
-                $countall = $queryall->result_array();
-                $data['count'] = ceil(count($countall)/8.0);
-                $data['page'] = $page;
-
-                $data['searchitem'] = $searchitem;
-                $data['searchselect'] =$searchselect;
-                $data['links'] = '';
             }
+
+            $data['dbquery'] = $query->result_array();
+            $countall = $queryall->result_array();
+            $data['count'] = ceil(count($countall)/8.0);
+            $data['page'] = $page;
+
+            $data['searchitem'] = $searchitem;
+            $data['searchselect'] =$searchselect;
+            $data['links'] = '';
+
 
             $this->load->view('receiverView', $data);
         }else{
