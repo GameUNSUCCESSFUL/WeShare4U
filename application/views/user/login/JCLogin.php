@@ -51,7 +51,11 @@
                                         if(data == "error"){
                                             $("#error").text("Password is invalid");
                                         }else if(data == "success"){
-                                            window.location.href="<?php echo base_url('index.php/Welcome/select'); ?>";
+                                            if(<?php echo $_SESSION["user_type"];?> == 'user'){
+                                                window.location.href="<?php echo base_url('index.php/Welcome/select'); ?>";
+                                            }else {
+                                                
+                                            }
                                         }else if(data == "captcha"){
                                             $("#error").text("Please Identify yourself");
                                         }else if(data == 1){
