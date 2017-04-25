@@ -4,6 +4,32 @@
         try{ace.settings.check('navbar' , 'fixed')}catch(e){}
     </script>
 
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        ul.nav li.dropdown:hover > ul.dropdown-menu{
+            display: block;
+            margin: 0;
+        }
+    </style>
+
     <div class="navbar-container" id="navbar-container">
         <!-- /section:basics/sidebar.mobile.toggle -->
         <div class="navbar-header pull-left">
@@ -80,13 +106,37 @@
             <?php endif; ?>
         </div>
 
+
         <div class="collapse navbar-collapse" role="navigation">
             <ul class="nav navbar-nav">
                 <li><a href="#">หน้าหลัก</a></li>
                 <li><a href="#">สถิติการบริจาค</a></li>
                 <li><a href="#">คำถามที่พบบ่อย</a></li>
-                <li><a href="#">เกี่ยวกับเรา</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">หมวดหมู่<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?php echo base_url('index.php/receiverController/index')?>">จัดเรียงตามวันที่</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">จัดเรียงตามประเภท<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a value="รถของเล่น" href="<?php echo base_url('index.php/receiverController/search_item?keyword=รถของเล่น&searchselect=selecttype')?>" >รถของเล่น</a></li>
+                                <li><a value="ตุ๊กตา" href="<?php echo base_url('index.php/receiverController/search_item?keyword=ตุ๊กตา&searchselect=selecttype')?>">ตุ๊กตา</a></li>
+                                <li><a value="เครื่องดนตรีของเล่น" href="<?php echo base_url('index.php/receiverController/search_item?keyword=เครื่องดนตรีของเล่น&searchselect=selecttype')?>">เครื่องดนตรีของเล่น</a></li>
+                                <li><a value="ตัวต่อเลโก้" href="<?php echo base_url('index.php/receiverController/search_item?keyword=ตัวต่อเลโก้&searchselect=selecttype')?>">ตัวต่อเลโก้</a></li>
+                                <li><a value="หุ่นยนต์" href="<?php echo base_url('index.php/receiverController/search_item?keyword=หุ่นยนต์&searchselect=selecttype')?>">หุ่นยนต์</a></li>
+                                <li><a value="เกมปริศนา" href="<?php echo base_url('index.php/receiverController/search_item?keyword=เกมปริศนา&searchselect=selecttype')?>">เกมปริศนา</a></li>
+                                <li><a value="ลูกบอล" href="<?php echo base_url('index.php/receiverController/search_item?keyword=ลูกบอล&searchselect=selecttype')?>">ลูกบอล</a></li>
+                                <li><a value="ของเล่นที่มีเสียงดนตรี" href="<?php echo base_url('index.php/receiverController/search_item?keyword=ของเล่นที่มีเสียงดนตรี&searchselect=selecttype')?>">ของเล่นที่มีเสียงดนตรี</a></li>
+                                <li><a value="ของเล่นลากจูง" href="<?php echo base_url('index.php/receiverController/search_item?keyword=ของเล่นลากจูง&searchselect=selecttype')?>">ของเล่นลากจูง</a></li>
+                                <li><a value="ของเล่นเขย่า" href="<?php echo base_url('index.php/receiverController/search_item?keyword=ของเล่นเขย่า&searchselect=selecttype')?>">ของเล่นเขย่า</a></li>
+                                <li><a value="ของเล่นไม้" href="<?php echo base_url('index.php/receiverController/search_item?keyword=ของเล่นไม้&searchselect=selecttype')?>">ของเล่นไม้</a></li>
+                                <li><a value="ของเล่นเครื่องครัว" href="<?php echo base_url('index.php/receiverController/search_item?keyword=ของเล่นเครื่องครัว&searchselect=selecttype')?>">ของเล่นเครื่องครัว</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
 
+                <li><a href="#">เกี่ยวกับเรา</a></li>
             </ul>
         </div >
 
