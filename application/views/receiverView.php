@@ -59,19 +59,20 @@
 
 =======
         <div class="row">
-            <?php $x = 0; foreach ($dbquery as $r): ?>
-                <div class="col-md-3">
-                    <div class="block">
-                        <div class="thumbnail">
-                            <?php
-                            if(mysqli_num_rows($dbquery)==0){ ?>
 
+            <?php if(empty($dbquery)){ ?>
+            <div>
+                <h1 align="center"> ไม่พบรายการ </h1>
+            </div>
 
+               <?php }else{
+                $x = 0; foreach ($dbquery as $r): ?>
 
-                            <?php }else{ ?>
+                                <div class="col-md-3">
+                                <div class="block">
+                                <div class="thumbnail">
                                 <img src="<?php echo base_url('uploads/donateImages/' . $r['img_path']) ?>"
                                      alt="...">
-
                                 <div class="caption">
                                     <h1 align="center"> <?php echo $r['product_name'] ?> </h1>
                                     <h4> <?php echo $r['product_type'] ?></h4>
@@ -83,10 +84,19 @@
 >>>>>>> origin/Ju
                                     </div>
                                 </div>
-                            <?php } ?>
+                                </div>
+                                </div>
+                                </div>
 
+<<<<<<< HEAD
                         </div>
                     </div>
+=======
+            <?php endforeach; ?>
+
+            <?php } ?>
+        </div>
+>>>>>>> origin/Ju
 
                     <?php if($x == 0 || $x == 4) echo '</div>' ?>
                 <?php endforeach; ?>
