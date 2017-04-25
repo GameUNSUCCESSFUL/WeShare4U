@@ -34,6 +34,7 @@
                     </div>
                     <?php echo form_close() ?>
 
+                    
                     <script>
                         $(document).ready(function () {
                             $("#event").submit(function () {
