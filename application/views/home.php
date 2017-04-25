@@ -18,9 +18,6 @@
 <?php include "navbarlogin.php"?>
 
 
-<!-- JCLogin ----------------------------------------------------------------------------------------------------------------->
-
-<?php include "user/login/JCLogin.php"; ?>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
