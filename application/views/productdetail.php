@@ -13,9 +13,10 @@
 <body>
 <!-- bar -->
 <?php include "navbarlogin.php" ?>
+
 <div class="container">
     <div class="row">
-        <div class="col-md-12" >
+        <div class="col-md-12">
             <br>
             <div class="thumbnail" style="padding: 30px 100px;">
                 <span class="topic">รายละเอียดของบริจาค</span>
@@ -68,13 +69,33 @@
                         <div class="row">
                             จำนวน : <input type="number" name="count" style="width: 5em" min="1"
                                            max="<?php echo $product['product_number'] ?>"
-                                           value="<?php if (!isset($_GET['count'])) {echo $product['product_number'];}else{ echo $_GET['count'];} ?>" <?php if($product['product_number'] == 0) echo "disabled"?>>
+                                           value="<?php
+                                           $basket = $this->session->basket;
+                                           $count = null;
+                                           if ($_GET['id']) {
+                                               $id = $_GET['id'];
+                                               foreach ($basket as $item) {
+                                                   if($item['product_id']==$id) {
+                                                       $count = $item['count'];
+                                                   }
+                                               }
+                                           }
+                                           if ($count != null){
+                                               echo $count;
+                                           }else{
+                                               echo $product['product_number'];
+                                           }
+
+                                           ?>" <?php if ($product['product_number'] == 0) echo "disabled" ?>>
                             / <?php echo $product['product_number'] ?> ชิ้น
-                            <input type="hidden" id="img" value="<?php echo $product['img_path']?>">
+                            <input type="hidden" id="img" value="<?php echo $product['img_path'] ?>">
                             <input type="hidden" name="product_name" value="<?php echo $product['product_name'] ?>">
                             <input type="hidden" name="product_id" value="<?php echo $product['product_id'] ?>">
                             <br><br>
-                            <button id="bt-submit" class="btn btn-success" type="submit" <?php if($product['product_number'] == 0) echo "disabled"?>>รับบริจาค</button>
+                            <button id="bt-submit" class="btn btn-success"
+                                    type="submit" <?php if ($product['product_number'] == 0) echo "disabled" ?>>
+                                รับบริจาค
+                            </button>
                             <!--                                <a class="btn btn-warning" href="receiver">ย้อนกลับ</a>-->
 
                             <script>
@@ -135,9 +156,17 @@
 
                 </div>
 
-                <div class="row <?php if($product['product_number'] != 0){echo "visi";}?>" align="center" id="status">
-                    <div class="alert <?php if($product['product_number'] != 0){echo "alert-success";}else{echo "alert-danger";}?> col-md-6 col-md-offset-3" role="alert" id="statusbox">
-                        <span id="textstatus"><?php if($product['product_number'] == 0){echo "ของบริจาคหมด!!";}?></span>
+                <div class="row <?php if ($product['product_number'] != 0) {
+                    echo "visi";
+                } ?>" align="center" id="status">
+                    <div class="alert <?php if ($product['product_number'] != 0) {
+                        echo "alert-success";
+                    } else {
+                        echo "alert-danger";
+                    } ?> col-md-6 col-md-offset-3" role="alert" id="statusbox">
+                        <span id="textstatus"><?php if ($product['product_number'] == 0) {
+                                echo "ของบริจาคหมด!!";
+                            } ?></span>
                     </div>
                 </div>
             </div>

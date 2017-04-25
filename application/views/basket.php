@@ -51,11 +51,16 @@
                                 </table>
                             </div>
                         </td>
-                        <td>จำนวน : <input type="number" name="count" onkeydown="return false" id="<?php echo $x ?>" value="<?php echo $item['count'] ?>" width="10px" min="0" max="<?php echo $item['max'] ?>"> / <?php echo $item['max']?> ชิ้น
+                        <td>จำนวน : <input type="number" name="count" onkeydown="return false" onclick="load_val(<?php echo $x ?>)" id="<?php echo $x ?>" value="<?php echo $item['count'] ?>" width="10px" min="0" max="<?php echo $item['max'] ?>"> / <?php echo $item['max']?> ชิ้น
                         </td>
                         <td><a class="btn btn-info"
-                               href="<?php echo base_url('productDetailController?id=' . $item['product_id']."&count=".$item['count']) ?>">แก้ไข</a>
-                        <td><a class="btn btn-danger" data-target="#btn_delete" id="btn_<?php echo $x ?>" onclick="load_val(<?php echo $x ?>)" data-toggle="modal">ลบ</a>
+                               href="<?php echo base_url('productDetailController?id=' . $item['product_id']) ?>">แก้ไข</a>
+                        <td>
+                            <a class="btn" data-target="#btn_delete" id="btn_<?php echo $x ?>" onclick="load_val(<?php echo $x ?>)" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span></a>
+
+                            <a class="btn" style="display: none;" id="btn_<?php echo $x ?>2" data-target="#btn_delete2" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span></a>
+
+                        </td>
 
 
 
@@ -64,7 +69,7 @@
                     </tr>
                     <?php $x++; endforeach;
             } ?>
-            <!-- model -------------------------------------------------------------------------------------------->
+            <!-- model delete -------------------------------------------------------------------------------------------->
             <div class="modal fade bs-example-modal-sm" tabindex="-1" id="btn_delete" role="dialog"
                  aria-labelledby="mySmallModalLabel">
                 <div class="modal-dialog modal-sm" role="document">
@@ -77,6 +82,26 @@
                         <div class="modal-body">
                             <div align="center">
                                 <button class="btn btn-danger btn-sm" data-dismiss="modal"  id="delete">ยืนยัน</button>
+                                <button class="btn btn-success btn-sm" data-dismiss="modal" >ยกเลิก</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- model delete2 -------------------------------------------------------------------------------------------->
+            <div class="modal fade bs-example-modal-sm" tabindex="-1" id="btn_delete2" role="dialog"
+                 aria-labelledby="mySmallModalLabel" >
+                <div class="modal-dialog modal-sm" role="document" >
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" >ยืนยันการลบสินค้า</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div align="center">
+                                <button class="btn btn-danger btn-sm" data-dismiss="modal"  id="delete2">ยืนยัน</button>
+                                <button class="btn btn-success btn-sm" data-dismiss="modal"  name="can">ยกเลิก</button>
                             </div>
                         </div>
                     </div>
@@ -88,6 +113,25 @@
                     val_id = $id_val;
                 }
                 $(document).ready(function () {
+                    $('button[name=can]').click(function () {
+                        var pid = "#PD_id"+val_id;
+                        var product_id = $(pid).val();
+                        var can_id = "#"+val_id
+                        $(can_id).val("1");
+                        $.ajax({
+                            type: "POST",
+                            url: "<?php echo base_url('index.php/BasketController/update_item_basket') ?>",
+                            data: {
+                                product_id: product_id,
+                                product_count:1
+                            },
+                            dataType: "text",
+                            cache: false,
+                            success: function (data) {
+                            }
+                        });
+
+                    });
                     $("input[name=count]").change(function () {
                         var pid = "#PD_id"+$(this).attr('id');
                         var product_id = $(pid).val();
@@ -95,7 +139,7 @@
                         var max = $(this).val();
                         var min = $(this).attr("min");
                         var value = $(this).val();
-                        var id = "#btn_"+$(this).attr('id');
+                        var id = "#btn_"+$(this).attr('id')+"2";
 
                         if(parseInt(value) == 0){
                             $(id).trigger('click');
@@ -115,6 +159,25 @@
                         }
                     });
                     $('#delete').click(function () {
+                        var product_id_in = "#PD_id"+val_id;
+                        var product_id = $(product_id_in).val();
+                        $.ajax({
+                            type: "POST",
+                            url: "<?php echo base_url('index.php/BasketController/remove_item') ?>",
+                            data: {
+                                product_id: product_id
+                            },
+                            dataType: "json",
+                            cache: false,
+                            success: function (data) {
+                                if (data.massage1 == "delete"){
+                                    location.reload();
+                                }
+                                $("#basket").text(data.massage2);
+                            }
+                        });
+                    });
+                    $('#delete2').click(function () {
                         var product_id_in = "#PD_id"+val_id;
                         var product_id = $(product_id_in).val();
                         $.ajax({
