@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <?php $this->load->view('includecss'); ?>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 
 
 <body>
 <!-- bar -->
-<?php $this->load->view('navbarlogin'); ?>
+<?php $this->load->view('navbarregister') ?>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -33,13 +34,13 @@
 
                             <div class="form-group">
                                 <label for="email"><h4>อีเมล์</h4></label>
-                                <input type="email" class="form-control" id="re_email" name="email"
+                                <input type="email" class="form-control" id="email" name="email"
                                        placeholder="Enter your email" >
                                 <p class="help-block">กรุณากรอกที่อยู่อีเมล์ที่ถูกต้อง</p>
                             </div>
                             <div class="form-group">
                                 <label for="password"><h4>รหัสผ่าน</h4></label>
-                                <input type="password" class="form-control" id="re_password" name="password"
+                                <input type="password" class="form-control" id="password" name="password"
                                        placeholder="Enter a password">
                                 <p class="help-block">กรุณากรอกรหัสผ่านอย่างน้อย 8 - 16 ตัวอักษร</p>
                             </div>
@@ -110,9 +111,8 @@
                                 <p class="help-block">กรุณาตอบคำถาม</p>
                             </div>
 
-                            <div align="center" id="2" class="g-recaptcha"
-                                 data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
 
+                            <div align="center" id="g-recaptcha-response" class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
                             <div class="form-group">
                                 <input type="submit" id="submit_register" class="btn btn-default" value="Register">
                             </div>
