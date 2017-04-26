@@ -32,7 +32,7 @@
                         </div>
 
                         <div class="col-xs-6 col-md-4"></div>
-                        <div class="col-xs-6 col-md-4"><center><h1>ยืนยันการสมัคร</h1><br><h2>โปรรอการยืนยันจากทางระบบ</h2></center></div>
+                        <div class="col-xs-6 col-md-4"><center><h1>ยืนยันการสมัคร</h1><br><h2>โปรดรอการยืนยันจากทางระบบ</h2></center></div>
                         <div class="col-xs-6 col-md-4"></div>
 
                     </div>
