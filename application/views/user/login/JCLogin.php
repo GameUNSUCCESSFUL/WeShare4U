@@ -58,6 +58,7 @@
                                             window.location.href="<?php echo base_url('index.php/AdminController'); ?>";
                                         }else if(data == "not_access"){
                                             window.location.href="<?php echo base_url('index.php/Welcome'); ?>";
+                                            alert("ท่านยังไม่ได้รับการอนุมัติ");
                                         }else if(data == "captcha"){
                                             $("#error").text("Please Identify yourself");
                                         }else if(data == 1){

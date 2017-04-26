@@ -63,10 +63,10 @@ class UserModel extends CI_Model
                     return "success";
                 }
             }else{
-                $_SESSION["email"] = '';
-                $_SESSION["firstname"] = '';
-                $_SESSION["lastname"] = '';
-                $_SESSION["user_type"] = '';
+                $_SESSION["email"] = null;
+                $_SESSION["firstname"] = null;
+                $_SESSION["lastname"] = null;
+                $_SESSION["user_type"] = null;
                 $_SESSION['logged_in'] = false;
                 return "not_access";
             }

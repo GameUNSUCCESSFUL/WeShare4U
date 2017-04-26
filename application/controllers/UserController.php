@@ -23,6 +23,13 @@ class UserController extends CI_Controller
     }
 
     /**
+     * @return object
+     */
+    public function register_success()
+    {
+        return $this->load->view('user/register/register_success');
+    }
+    /**
      * register function.
      *
      * @access public

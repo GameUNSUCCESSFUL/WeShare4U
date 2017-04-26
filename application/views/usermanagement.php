@@ -44,8 +44,9 @@
                     <td ><?php echo $user['user_id']?></td>
                     <td ><?php echo $user['firstname']?></td>
                     <td ><?php echo $user['lastname']?></td>
-                    <td >#</td>
-                    <td >#</td>
+                    <td ><?php echo $user['identity_card']?></td>
+                    <td ><img src="<?php echo base_url('uploads/donateImages/') . $user['img_path']; ?>" id='output'
+                              height='200' width='300'></td>
                     <td >
                         <input type="hidden" id="email_<?php echo $user['user_id']?>" value="<?php echo $user['email']?>">
                         <button class="btn btn-success" id="btn_accept" onclick="load_id(<?php echo $user['user_id']?>)" >อนุมัติ</button>
