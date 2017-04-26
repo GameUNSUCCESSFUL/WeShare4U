@@ -20,14 +20,12 @@
                         <input type="password" class="form-control" placeholder="Password" id="password"
                                name="password">
                     </div>
-                    <a href="<?php echo base_url('index.php/UserController/forget_password'); ?>"
-                       style="color: #0f0f0f">ลืมรหัสผ่าน? </a>|<br><br>
+                    <a href="<?php echo base_url('index.php/UserController/forget_password');?>" style="color: #0f0f0f">ลืมรหัสผ่าน? </a>|<br><br>
 
-                    <!--                    <div align="center" id="recaptcha" class="g-recaptcha"-->
-                    <!--                         data-sitekey="6LdM9RoUAAAAABEquyphv8VNH7W3l0aG92CKTYKc"></div>-->
+<!--                    <div align="center" id="recaptcha" class="g-recaptcha"-->
+<!--                         data-sitekey="6LdM9RoUAAAAABEquyphv8VNH7W3l0aG92CKTYKc"></div>-->
 
-                    <div align="center" id="g-recaptcha-response" class="g-recaptcha"
-                         data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                    <div align="center" id="g-recaptcha-response" class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
 
                     <div align="center">
                         <p style="color:red"><br><span id="error"> </span></p></div>
@@ -36,7 +34,6 @@
                     </div>
                     <?php echo form_close() ?>
 
-                    
                     <script>
                         $(document).ready(function () {
                             $("#event").submit(function () {
@@ -54,11 +51,7 @@
                                         if(data == "error"){
                                             $("#error").text("Password is invalid");
                                         }else if(data == "success"){
-                                                window.location.href="<?php echo base_url('index.php/Welcome/select'); ?>";
-                                        }else if(data == "admin"){
-                                            window.location.href="<?php echo base_url('index.php/AdminController'); ?>";
-                                        }else if(data == "not_access"){
-                                            window.location.href="<?php echo base_url('index.php/Welcome'); ?>";
+                                            window.location.href="<?php echo base_url('index.php/Welcome/select'); ?>";
                                         }else if(data == "captcha"){
                                             $("#error").text("Please Identify yourself");
                                         }else if(data == 1){
@@ -67,6 +60,7 @@
 //                                        if (data == "error") {
 //                                            $("#error").text("Please Enter E-mail or Password");
 //                                        }else if(data == "login_fail"){
+//                                           $("#error").text("E-mail or Password is fail");
 //                                        }else if(data == "error_cap"){
 //                                            $("#error").text("Please Identify yourself");
 //                                        }else if(data == "true"){
